@@ -2,21 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const reviews = [
-  { slug: 'top-10-best-portable-blenders-smoothies-2026', image: 'blender.jpg', title: 'Top 10 Best Portable Blenders for Smoothies in 2026', category: 'Home & Kitchen', emoji: '🥤', readTime: '5 min', badge: 'Editor\'s Choice' },
-  { slug: 'top-10-best-led-desk-lamps-work-from-home', image: 'led-lamp.jpg', title: 'Top 10 Best LED Desk Lamps for Working From Home in 2026', category: 'Home & Office', emoji: '💡', readTime: '6 min', badge: null },
-  { slug: 'top-10-best-yoga-mats-beginners', image: 'yoga-mat.jpg', title: 'Top 10 Best Yoga Mats for Beginners in 2026', category: 'Fitness & Health', emoji: '🧘', readTime: '5 min', badge: 'Best Value' },
-  { slug: 'top-10-best-robot-vacuums-under-300', image: 'robot-vacuum.jpg', title: 'Top 10 Best Robot Vacuums Under $300 in 2026', category: 'Smart Home', emoji: '🤖', readTime: '7 min', badge: null },
-  { slug: 'top-10-best-essential-oil-diffusers', image: 'essential-oil.jpg', title: 'Top 10 Best Essential Oil Diffusers in 2026', category: 'Home & Wellness', emoji: '🌿', readTime: '5 min', badge: null },
-  { slug: 'top-10-best-air-fryers-small-kitchen', image: 'air-fryer.jpg', title: 'Top 10 Best Air Fryers for Small Kitchens in 2026', category: 'Home & Kitchen', emoji: '🍟', readTime: '6 min', badge: 'Top Pick' },
-  { slug: 'top-10-best-weighted-blankets-better-sleep', image: 'weighted-blanket.jpg', title: 'Top 10 Best Weighted Blankets for Better Sleep in 2026', category: 'Bedroom', emoji: '🛏️', readTime: '5 min', badge: null },
-  { slug: 'top-10-best-electric-kettles-precise-temperature', image: 'kettle.jpg', title: 'Top 10 Best Electric Kettles with Precise Temperature Control in 2026', category: 'Home & Kitchen', emoji: '☕', readTime: '6 min', badge: null },
-  { slug: 'top-10-best-standing-desks-converter', image: 'standing-desk.jpg', title: 'Top 10 Best Standing Desk Converters in 2026', category: 'Home & Office', emoji: '🪑', readTime: '6 min', badge: 'Premium Pick' },
-  { slug: 'top-10-best-cordless-vacuums-lightweight', image: 'cordless-vacuum.jpg', title: 'Top 10 Best Cordless Vacuums (Lightweight) in 2026', category: 'Smart Home', emoji: '🧹', readTime: '7 min', badge: null },
-  { slug: 'top-10-best-skincare-fridges-mini', image: 'skincare-fridge.jpg', title: 'Top 10 Best Mini Skincare Fridges in 2026', category: 'Beauty', emoji: '❄️', readTime: '5 min', badge: null },
-  { slug: 'top-10-best-insulated-water-bottles', image: 'water-bottle.jpg', title: 'Top 10 Best Insulated Water Bottles in 2026', category: 'Outdoor & Travel', emoji: '🧊', readTime: '5 min', badge: 'Our Pick' },
-  { slug: 'top-10-best-massage-guns-recovery', image: 'massage-gun.jpg', title: 'Top 10 Best Massage Guns for Muscle Recovery in 2026', category: 'Fitness & Health', emoji: '💆', readTime: '6 min', badge: null },
-  { slug: 'top-10-best-coffee-makers-single-serve', image: 'coffee.jpg', title: 'Top 10 Best Single-Serve Coffee Makers in 2026', category: 'Home & Kitchen', emoji: '☕', readTime: '6 min', badge: null },
-  { slug: 'top-10-best-area-rugs-living-room', image: 'rug.jpg', title: 'Top 10 Best Area Rugs for Living Room in 2026', category: 'Home & Decor', emoji: '🏠', readTime: '5 min', badge: null },
+  { slug: 'top-10-best-portable-blenders-smoothies-2026', image: 'blender.jpg', title: 'Top 10 Best Portable Blenders for Smoothies in 2026', category: '居家與廚房', emoji: '🥤', 分鐘閱讀Time: '5 min', badge: 'Editor\'s Choice' },
+  { slug: 'top-10-best-led-desk-lamps-work-from-home', image: 'led-lamp.jpg', title: 'Top 10 Best LED Desk Lamps for Working From Home in 2026', category: '家居與辦公', emoji: '💡', 分鐘閱讀Time: '6 min', badge: null },
+  { slug: 'top-10-best-yoga-mats-beginners', image: 'yoga-mat.jpg', title: 'Top 10 Best Yoga Mats for Beginners in 2026', category: '健身與健康', emoji: '🧘', 分鐘閱讀Time: '5 min', badge: 'Best Value' },
+  { slug: 'top-10-best-robot-vacuums-under-300', image: 'robot-vacuum.jpg', title: 'Top 10 Best Robot Vacuums Under $300 in 2026', category: '智能家居', emoji: '🤖', 分鐘閱讀Time: '7 min', badge: null },
+  { slug: 'top-10-best-essential-oil-diffusers', image: 'essential-oil.jpg', title: 'Top 10 Best Essential Oil Diffusers in 2026', category: 'Home & 健康養生', emoji: '🌿', 分鐘閱讀Time: '5 min', badge: null },
+  { slug: 'top-10-best-air-fryers-small-kitchen', image: 'air-fryer.jpg', title: 'Top 10 Best Air Fryers for Small 廚房用品s in 2026', category: '居家與廚房', emoji: '🍟', 分鐘閱讀Time: '6 min', badge: 'Top Pick' },
+  { slug: 'top-10-best-weighted-blankets-better-sleep', image: 'weighted-blanket.jpg', title: 'Top 10 Best Weighted Blankets for Better Sleep in 2026', category: '臥室', emoji: '🛏️', 分鐘閱讀Time: '5 min', badge: null },
+  { slug: 'top-10-best-electric-kettles-precise-temperature', image: 'kettle.jpg', title: 'Top 10 Best Electric Kettles with Precise Temperature Control in 2026', category: '居家與廚房', emoji: '☕', 分鐘閱讀Time: '6 min', badge: null },
+  { slug: 'top-10-best-standing-desks-converter', image: 'standing-desk.jpg', title: 'Top 10 Best Standing Desk Converters in 2026', category: '家居與辦公', emoji: '🪑', 分鐘閱讀Time: '6 min', badge: 'Premium Pick' },
+  { slug: 'top-10-best-cordless-vacuums-lightweight', image: 'cordless-vacuum.jpg', title: 'Top 10 Best Cordless Vacuums (Lightweight) in 2026', category: '智能家居', emoji: '🧹', 分鐘閱讀Time: '7 min', badge: null },
+  { slug: 'top-10-best-skincare-fridges-mini', image: 'skincare-fridge.jpg', title: 'Top 10 Best Mini Skincare Fridges in 2026', category: '美容護理', emoji: '❄️', 分鐘閱讀Time: '5 min', badge: null },
+  { slug: 'top-10-best-insulated-water-bottles', image: 'water-bottle.jpg', title: 'Top 10 Best Insulated Water Bottles in 2026', category: 'Outdoor & Travel', emoji: '🧊', 分鐘閱讀Time: '5 min', badge: 'Our Pick' },
+  { slug: 'top-10-best-massage-guns-recovery', image: 'massage-gun.jpg', title: 'Top 10 Best Massage Guns for Muscle Recovery in 2026', category: '健身與健康', emoji: '💆', 分鐘閱讀Time: '6 min', badge: null },
+  { slug: 'top-10-best-coffee-makers-single-serve', image: 'coffee.jpg', title: 'Top 10 Best Single-Serve Coffee Makers in 2026', category: '居家與廚房', emoji: '☕', 分鐘閱讀Time: '6 min', badge: null },
+  { slug: 'top-10-best-area-rugs-living-room', image: 'rug.jpg', title: 'Top 10 Best Area Rugs for Living Room in 2026', category: 'Home & Decor', emoji: '🏠', 分鐘閱讀Time: '5 min', badge: null },
 ];
 
 const description = "Expert reviews and rankings of premium lifestyle products. From kitchen essentials to fitness gear, discover the best picks for discerning tastes.";
@@ -29,7 +29,7 @@ const description = "Expert reviews and rankings of premium lifestyle products. 
       <div class="max-w-4xl mx-auto px-6 lg:px-8" data-aos="fade-up">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-6">
           <span class="w-2 h-2 rounded-full bg-gold"></span>
-          <span class="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold">Expert Reviews</span>
+          <span class="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold">專家評論</span>
         </div>
         <h1 class="font-serif text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
           The Most <span class="gold-gradient-text">Trusted</span> Product Reviews
@@ -73,7 +73,7 @@ const description = "Expert reviews and rankings of premium lifestyle products. 
                 {review.title}
               </h2>
               <div class="flex items-center justify-between pt-4 border-t border-border">
-                <span class="text-xs text-text-silent">{review.readTime} read</span>
+                <span class="text-xs text-text-silent">{review.分鐘閱讀Time} 分鐘閱讀</span>
                 <span class="inline-flex items-center gap-1 text-sm font-medium text-gold group/link">
                   Read Review
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

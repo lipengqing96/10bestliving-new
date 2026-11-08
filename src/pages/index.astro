@@ -4,74 +4,74 @@ import ProductImage from '../components/ProductImage.astro';
 import CTA from '../components/CTA.astro';
 
 const categories = [
-  { slug: '#home-kitchen', name: 'Home & Kitchen', emoji: '🍳', gradient: 'from-amber-50 via-orange-50 to-stone-100', count: 4, accent: '#C9A962' },
-  { slug: '#fitness-health', name: 'Fitness & Health', emoji: '💪', gradient: 'from-emerald-50 via-teal-50 to-cyan-50', count: 4, accent: '#2D5A4C' },
-  { slug: '#smart-home', name: 'Smart Home', emoji: '🏡', gradient: 'from-blue-50 via-indigo-50 to-violet-50', count: 3, accent: '#4F46E5' },
-  { slug: '#beauty', name: 'Beauty & Care', emoji: '✨', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#BE185D' },
-  { slug: '#outdoor', name: 'Outdoor & Travel', emoji: '🏔️', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
+  { slug: '#home-kitchen', name: '居家與廚房', emoji: '🍳', gradient: 'from-amber-50 via-orange-50 to-stone-100', count: 4, accent: '#C9A962' },
+  { slug: '#fitness-health', name: '健身與健康', emoji: '💪', gradient: 'from-emerald-50 via-teal-50 to-cyan-50', count: 4, accent: '#2D5A4C' },
+  { slug: '#smart-home', name: '智能家居', emoji: '🏡', gradient: 'from-blue-50 via-indigo-50 to-violet-50', count: 3, accent: '#4F46E5' },
+  { slug: '#beauty', name: '美容護理', emoji: '✨', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#BE185D' },
+  { slug: '#outdoor', name: '戶外與旅行', emoji: '🏔️', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
 ];
 
 const featuredReviews = [
   {
     slug: 'top-10-best-portable-blenders-smoothies-2026',
-    title: 'Top 10 Best Portable Blenders for Smoothies in 2026',
-    excerpt: 'From commute-ready models to gym bag companions, these portable blenders deliver fresh smoothies anywhere.',
-    category: 'Home & Kitchen',
+    title: '十大最佳便攜果汁機Smoothie攪拌機2026年推薦',
+    excerpt: '從通勤到健身房，便攜果汁機隨時為你打造新鮮Smoothie。',
+    category: '居家與廚房',
     emoji: '🥤',
     gradient: 'from-amber-50 via-orange-50 to-yellow-50',
-    badge: "Editor's Choice",
+    badge: "編輯精選",
     image: 'blender.jpg',
-    readTime: '5 min',
+    readTime: '5 分鐘閱讀',
   },
   {
     slug: 'top-10-best-robot-vacuums-under-300',
-    title: 'Top 10 Best Robot Vacuums Under $300 in 2026',
-    excerpt: 'Clean your home smartly without breaking the bank. We tested the top robot vacuums for value and performance.',
-    category: 'Smart Home',
+    title: '十大最佳300美元以內掃地機器人2026年推薦',
+    excerpt: '智慧清潔不花大錢，我們測試了最具性價比的掃地機器人榜單。',
+    category: '智能家居',
     emoji: '🤖',
     gradient: 'from-blue-50 via-indigo-50 to-violet-50',
     badge: null,
     image: 'robot-vacuum.jpg',
-    readTime: '7 min',
+    readTime: '7 分鐘閱讀',
   },
   {
     slug: 'top-10-best-yoga-mats-beginners',
-    title: 'Top 10 Best Yoga Mats for Beginners in 2026',
-    excerpt: 'Find your perfect mat for every practice level. We tested grip, cushioning, and durability across 25 models.',
-    category: 'Fitness & Health',
+    title: '十大最佳瑜伽墊初學者入門2026年推薦',
+    excerpt: '找到適合每個練習階段的完美瑜伽墊，我們測試了25款產品的抓地力、緩衝和耐用性。',
+    category: '健身與健康',
     emoji: '🧘',
     gradient: 'from-emerald-50 via-teal-50 to-green-50',
-    badge: 'Best Value',
+    badge: '最佳性價比',
     image: 'yoga-mat.jpg',
     readTime: '5 min',
   },
   {
     slug: 'top-10-best-coffee-makers-single-serve',
-    title: 'Top 10 Best Single-Serve Coffee Makers in 2026',
-    excerpt: 'Perfect your morning ritual with the best pod and ground coffee makers — from $40 to $300.',
-    category: 'Home & Kitchen',
+    title: '十大最佳單杯咖啡機2026年推薦',
+    excerpt: '用最佳膠囊和研磨咖啡機提升您的早晨儀式，價格從40至300美元。',
+    category: '居家與廚房',
     emoji: '☕',
     gradient: 'from-amber-50 via-yellow-50 to-orange-50',
     badge: null,
     image: 'coffee.jpg',
-    readTime: '6 min',
+    readTime: '6 分鐘閱讀',
   },
   {
     slug: 'top-10-best-insulated-water-bottles',
-    title: 'Top 10 Best Insulated Water Bottles in 2026',
-    excerpt: 'Stay hydrated all day. We tested 18 bottles for cold retention, durability, and leak-proof performance.',
-    category: 'Outdoor & Travel',
+    title: '十大最佳保溫水壺2026年推薦',
+    excerpt: '全天保持水分補給，我們測試了18款水壺的保冷能力、耐用性和防漏性能。',
+    category: '戶外與旅行',
     emoji: '🧊',
     gradient: 'from-cyan-50 via-blue-50 to-indigo-50',
-    badge: 'Our Pick',
+    badge: '我們的推薦',
     image: 'water-bottle.jpg',
     readTime: '5 min',
   },
   {
     slug: 'top-10-best-weighted-blankets-better-sleep',
-    title: 'Top 10 Best Weighted Blankets for Better Sleep in 2026',
-    excerpt: 'Transform your sleep quality with deep pressure therapy. Tested for weight distribution and temperature.',
-    category: 'Bedroom',
+    title: '十大最佳重力毯改善睡眠2026年推薦',
+    excerpt: '用深壓刺激療法提升睡眠品質，經測試重量分佈和溫度調節表現。',
+    category: '臥室',
     emoji: '🛏️',
     gradient: 'from-violet-50 via-purple-50 to-fuchsia-50',
     badge: null,
@@ -81,15 +81,15 @@ const featuredReviews = [
 ];
 
 const allReviews = [
-  { slug: 'top-10-best-led-desk-lamps-work-from-home', title: 'LED Desk Lamps', cat: 'Home & Office', image: 'led-lamp.jpg', emoji: '💡', gradient: 'from-yellow-50 to-amber-50', badge: null },
-  { slug: 'top-10-best-essential-oil-diffusers', title: 'Essential Oil Diffusers', cat: 'Wellness', image: 'essential-oil.jpg', emoji: '🌿', gradient: 'from-green-50 to-emerald-50', badge: null },
-  { slug: 'top-10-best-air-fryers-small-kitchen', title: 'Air Fryers', cat: 'Kitchen', image: 'air-fryer.jpg', emoji: '🍟', gradient: 'from-orange-50 to-red-50', badge: 'Top Pick' },
-  { slug: 'top-10-best-electric-kettles-precise-temperature', title: 'Electric Kettles', cat: 'Kitchen', image: 'kettle.jpg', emoji: '☕', gradient: 'from-amber-50 to-yellow-50', badge: null },
-  { slug: 'top-10-best-standing-desks-converter', title: 'Standing Desk Converters', cat: 'Office', image: 'standing-desk.jpg', emoji: '🪑', gradient: 'from-slate-50 to-gray-100', badge: 'Premium Pick' },
-  { slug: 'top-10-best-cordless-vacuums-lightweight', title: 'Cordless Vacuums', cat: 'Smart Home', image: 'cordless-vacuum.jpg', emoji: '🧹', gradient: 'from-blue-50 to-sky-50', badge: null },
-  { slug: 'top-10-best-skincare-fridges-mini', title: 'Skincare Fridges', cat: 'Beauty', image: 'skincare-fridge.jpg', emoji: '❄️', gradient: 'from-sky-50 to-cyan-50', badge: null },
-  { slug: 'top-10-best-massage-guns-recovery', title: 'Massage Guns', cat: 'Fitness', image: 'massage-gun.jpg', emoji: '💆', gradient: 'from-rose-50 to-pink-50', badge: null },
-  { slug: 'top-10-best-area-rugs-living-room', title: 'Area Rugs', cat: 'Home Decor', image: 'rug.jpg', emoji: '🏠', gradient: 'from-amber-50 to-stone-100', badge: null },
+  { slug: 'top-10-best-led-desk-lamps-work-from-home', title: 'LED檯燈', cat: '家居與辦公', image: 'led-lamp.jpg', emoji: '💡', gradient: 'from-yellow-50 to-amber-50', badge: null },
+  { slug: 'top-10-best-essential-oil-diffusers', title: '香薰擴散器', cat: '健康養生', image: 'essential-oil.jpg', emoji: '🌿', gradient: 'from-green-50 to-emerald-50', badge: null },
+  { slug: 'top-10-best-air-fryers-small-kitchen', title: '空氣炸鍋', cat: '廚房用品', image: 'air-fryer.jpg', emoji: '🍟', gradient: 'from-orange-50 to-red-50', badge: 'Top Pick' },
+  { slug: 'top-10-best-electric-kettles-precise-temperature', title: '電水壺', cat: 'Kitchen', image: 'kettle.jpg', emoji: '☕', gradient: 'from-amber-50 to-yellow-50', badge: null },
+  { slug: 'top-10-best-standing-desks-converter', title: '升降桌轉換器', cat: '辦公', image: 'standing-desk.jpg', emoji: '🪑', gradient: 'from-slate-50 to-gray-100', badge: 'Premium Pick' },
+  { slug: 'top-10-best-cordless-vacuums-lightweight', title: '無線吸塵器', cat: '智能家居', image: 'cordless-vacuum.jpg', emoji: '🧹', gradient: 'from-blue-50 to-sky-50', badge: null },
+  { slug: 'top-10-best-skincare-fridges-mini', title: '護膚冰箱', cat: '美容護理', image: 'skincare-fridge.jpg', emoji: '❄️', gradient: 'from-sky-50 to-cyan-50', badge: null },
+  { slug: 'top-10-best-massage-guns-recovery', title: '按摩槍', cat: '健身與健康', image: 'massage-gun.jpg', emoji: '💆', gradient: 'from-rose-50 to-pink-50', badge: null },
+  { slug: 'top-10-best-area-rugs-living-room', title: '地毯', cat: '家居裝飾', image: 'rug.jpg', emoji: '🏠', gradient: 'from-amber-50 to-stone-100', badge: null },
 ];
 ---
 
@@ -253,7 +253,7 @@ const allReviews = [
           <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A]">Editor's Selection</h2>
         </div>
         <a href="/blog" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-[#C9A962] hover:text-[#B8944F] transition-colors">
-          View All Reviews
+          查看全部評測
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
@@ -289,7 +289,7 @@ const allReviews = [
               <div class="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
                 <span class="text-xs text-[#9A9A9A]">{review.readTime} read</span>
                 <span class="inline-flex items-center gap-1 text-sm font-semibold text-[#C9A962] group/link">
-                  Read Review
+                  瀏覽評測
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </span>
               </div>
@@ -330,7 +330,7 @@ const allReviews = [
               <div class="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
                 <span class="text-xs text-[#9A9A9A]">{review.readTime} read</span>
                 <span class="inline-flex items-center gap-1 text-sm font-semibold text-[#C9A962] group/link">
-                  Read Review
+                  瀏覽評測
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </span>
               </div>
@@ -341,33 +341,33 @@ const allReviews = [
 
       <div class="mt-12 text-center sm:hidden">
         <a href="/blog" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold border-2 border-[#C9A962] text-[#C9A962] hover:bg-[#C9A962] hover:text-[#1A1A1A] transition-all duration-300">
-          View All Reviews
+          查看全部評測
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  {/* Newsletter Section */}
+  {/* 電子報 Section */}
   <section class="py-24" style="background: linear-gradient(135deg, #C9A962 0%, #E8D5B0 50%, #C9A962 100%);">
     <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center" data-aos="fade-up">
-      <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#1A1A1A]/60 mb-4">Newsletter</p>
-      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-5">Join 50,000+ Discerning Shoppers</h2>
+      <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#1A1A1A]/60 mb-4">電子報</p>
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-5">加入5萬位講究品味的購物者</h2>
       <p class="text-[#1A1A1A]/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-        Get our weekly curated picks, exclusive deals, and expert buying guides delivered to your inbox.
+        每週為您送去精選好物、獨家優惠和專家購買指南。
       </p>
       <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
         <input
           type="email"
-          placeholder="Enter your email address"
+          placeholder="請輸入您的電子郵件地址"
           required
           class="flex-1 px-5 py-4 rounded-xl bg-white/95 border-2 border-[#C9A962]/30 focus:border-[#C9A962] focus:outline-none text-[#1A1A1A] placeholder:text-[#9A9A9A] text-base transition-colors shadow-sm"
         />
         <button type="submit" class="px-8 py-4 rounded-xl font-semibold text-[#1A1A1A] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300" style="background: #1A1A1A; color: #C9A962;">
-          Subscribe
+          訂閱
         </button>
       </form>
-      <p class="text-xs text-[#1A1A1A]/50 mt-4">No spam, ever. Unsubscribe anytime. We respect your privacy.</p>
+      <p class="text-xs text-[#1A1A1A]/50 mt-4">絕不濫發郵件。隨時可取消訂閱。我們尊重您的隱私權。</p>
     </div>
   </section>
 </BaseLayout>
