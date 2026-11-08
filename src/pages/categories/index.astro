@@ -1,20 +1,20 @@
 ---
-title: "Categories | 10Best Living"
+title: "商品分類 | 10Best Living"
 import "../../styles/global.css";
 ---
 
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="description" content="Curated luxury product reviews for discerning lifestyles." />
+  <meta name="description" content="為講究品味的生活精選頂級產品評測。" />
   <meta name="lhverifycode" content="32dc01246faccb7f5b3cad5016dd5033" />
   <title>Categories | 10Best Living | 10Best Living</title>
   <meta property="og:title" content="Categories | 10Best Living" />
-  <meta property="og:description" content="Curated luxury product reviews for discerning lifestyles." />
+  <meta property="og:description" content="為講究品味的生活精選頂級產品評測。" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href={Astro.site + Astro.url.pathname} />
@@ -29,11 +29,11 @@ import "../../styles/global.css";
         <span class="text-xs text-[#9A9A9A] tracking-[0.2em] uppercase font-sans">Living</span>
       </a>
       <nav class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">Home</a>
-        <a href="/categories" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">Categories</a>
-        <a href="/about" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">About</a>
-        <a href="/contact" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">Contact</a>
-        <a href="/blog" class="inline-flex items-center gap-0.5 px-4 py-2 rounded-lg font-semibold text-sm bg-gradient-to-br from-[#C9A962] to-[#E8D5B0] text-[#1A1A1A] shadow-[0_4px_15px_rgba(201,169,98,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(201,169,98,0.4)] transition-all">Read Reviews</a>
+        <a href="/" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">首頁</a>
+        <a href="/categories" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">分類</a>
+        <a href="/about" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">關於我們</a>
+        <a href="/contact" class="text-[#1A1A1A] hover:text-[#C9A962] transition-colors font-medium text-sm">聯絡我們</a>
+        <a href="/blog" class="inline-flex items-center gap-0.5 px-4 py-2 rounded-lg font-semibold text-sm bg-gradient-to-br from-[#C9A962] to-[#E8D5B0] text-[#1A1A1A] shadow-[0_4px_15px_rgba(201,169,98,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(201,169,98,0.4)] transition-all">瀏覽評測</a>
       </nav>
       <button id="menuBtn" class="md:hidden p-2 text-[#1A1A1A]" aria-label="Menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -45,20 +45,20 @@ import "../../styles/global.css";
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <nav class="flex flex-col items-center gap-6">
-      <a href="/" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">Home</a>
-      <a href="/categories" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">Categories</a>
-      <a href="/about" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">About</a>
-      <a href="/contact" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">Contact</a>
-      <a href="/blog" class="inline-flex items-center gap-0.5 px-4 py-2 rounded-lg font-semibold text-sm bg-gradient-to-br from-[#C9A962] to-[#E8D5B0] text-[#1A1A1A] shadow-[0_4px_15px_rgba(201,169,98,0.3)] mt-4">Read Reviews</a>
+      <a href="/" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">首頁</a>/a>
+      <a href="/categories" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">分類</a>
+      <a href="/about" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">關於我們</a>/a>
+      <a href="/contact" class="text-white text-2xl font-serif hover:text-[#C9A962] transition-colors">聯絡我們</a>/a>
+      <a href="/blog" class="inline-flex items-center gap-0.5 px-4 py-2 rounded-lg font-semibold text-sm bg-gradient-to-br from-[#C9A962] to-[#E8D5B0] text-[#1A1A1A] shadow-[0_4px_15px_rgba(201,169,98,0.3)] mt-4">瀏覽評測</a>
     </nav>
   </div>
 
   <main class="pt-20">
 <section class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6">
-      <h1 class="font-serif text-5xl font-bold text-dark mb-4">Categories</h1>
+      <h1 class="font-serif text-5xl font-bold text-dark mb-4">商品分類</h1>
       <div class="section-divider w-24 mb-8"></div>
-      <p class="text-text-muted text-lg max-w-2xl mb-16">Explore reviews by topic. Every category is curated with care.</p>
+      <p class="text-text-muted text-lg max-w-2xl mb-16">依主題探索評測。每個分類皆經過精心篩選。</p>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         {[
           {name:'居家與廚房',slug:'home-kitchen',emoji:'🏠',count:48},
@@ -69,13 +69,13 @@ import "../../styles/global.css";
           {name:'Office',slug:'office',emoji:'🪑',count:24},
           {name:'Gaming',slug:'gaming',emoji:'🎮',count:19},
           {name:'Pet',slug:'pet',emoji:'🐾',count:15},
-          {name:'Baby & Kids',slug:'baby-kids',emoji:'👶',count:12},
+          {name:'寶寶與兒童',slug:'baby-kids',emoji:'👶',count:12},
           {name:'Garden',slug:'garden',emoji:'🌱',count:10},
         ].map((cat)=>(
           <a href={`/blog?category=${cat.slug}`} class="card-hover bg-white rounded-2xl p-6 text-center group cursor-pointer">
             <div class="text-4xl mb-3 group-hover:scale-110 transition-transform">{cat.emoji}</div>
             <div class="font-serif text-dark font-semibold">{cat.name}</div>
-            <div class="text-muted text-sm mt-1">{cat.count} reviews</div>
+            <div class="text-muted text-sm mt-1">{cat.count} 評測</div>
           </a>
         ))}
       </div>
@@ -94,19 +94,19 @@ import "../../styles/global.css";
             <span class="font-serif text-2xl font-bold leading-none"><span style="color:#C9A962">10</span><span>Best</span></span>
             <span class="text-xs text-[#9A9A9A] tracking-[0.2em] uppercase font-sans">Living</span>
           </div>
-          <p class="text-[#9A9A9A] text-sm leading-relaxed max-w-sm">Curated reviews for discerning lifestyles. We test everything so you don&apos;t have to.</p>
+          <p class="text-[#9A9A9A] text-sm leading-relaxed max-w-sm">為講究品味的您精選評測。我們測試一切，讓您無需費心。</p>
         </div>
         <div>
           <h4 class="font-serif text-[#C9A962] font-semibold mb-4 uppercase tracking-wider text-sm">Explore</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/blog" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">Reviews</a></li>
+            <li><a href="/blog" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">評測</a></li>
             <li><a href="/categories" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">Categories</a></li>
-            <li><a href="/about" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">About Us</a></li>
-            <li><a href="/contact" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">Contact</a></li>
+            <li><a href="/about" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">關於我們</a></li>
+            <li><a href="/contact" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">聯絡我們</a>/a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-serif text-[#C9A962] font-semibold mb-4 uppercase tracking-wider text-sm">Categories</h4>
+          <h4 class="font-serif text-[#C9A962] font-semibold mb-4 uppercase tracking-wider text-sm">商品分類</h4>
           <ul class="space-y-3 text-sm">
             <li><a href="/blog?category=home-kitchen" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">居家與廚房</a></li>
             <li><a href="/blog?category=fitness-health" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">健身與健康</a></li>
@@ -117,22 +117,22 @@ import "../../styles/global.css";
         <div>
           <h4 class="font-serif text-[#C9A962] font-semibold mb-4 uppercase tracking-wider text-sm">Legal</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/privacy" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms-of-service" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">Terms of Service</a></li>
-            <li><a href="/affiliate-disclosure" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">Affiliate Disclosure</a></li>
+            <li><a href="/privacy" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">隱私權政策</a></li>
+            <li><a href="/terms-of-service" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">服務條款</a></li>
+            <li><a href="/affiliate-disclosure" class="text-[#9A9A9A] hover:text-[#C9A962] transition-colors">聯盟披露</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 text-center">
-        <p class="text-[#9A9A9A] text-xs leading-relaxed max-w-2xl mx-auto mb-4">As an Amazon Associate we earn from qualifying purchases. All reviews are independent and unbiased.</p>
-        <p class="text-[#6B6B6B] text-xs">&copy; 2026 10Best Living. All rights reserved.</p>
+        <p class="text-[#9A9A9A] text-xs leading-relaxed max-w-2xl mx-auto mb-4">作為Amazon聯盟會員，我們從符合資格的購買中獲得佣金。所有評測均獨立公正。</p>
+        <p class="text-[#6B6B6B] text-xs">&copy; 2026 10Best Living. 版權所有。</p>
       </div>
     </div>
   </footer>
 
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-[#1A1A1A] text-white px-6 py-4 flex items-center justify-center gap-4 z-50 hidden">
-    <p class="text-sm text-[#9A9A9A]">We use cookies to enhance your experience. By continuing, you agree to our privacy policy.</p>
-    <button id="acceptCookies" class="px-4 py-2 bg-gradient-to-r from-[#C9A962] to-[#E8D5B0] text-[#1A1A1A] font-semibold rounded-lg text-sm hover:opacity-90">Accept</button>
+    <p class="text-sm text-[#9A9A9A]">我們使用Cookie以提升您的體驗。繼續瀏覽即表示您同意我們的隱私權政策。</p>
+    <button id="acceptCookies" class="px-4 py-2 bg-gradient-to-r from-[#C9A962] to-[#E8D5B0] text-[#1A1A1A] font-semibold rounded-lg text-sm hover:opacity-90">接受</button>
   </div>
   <script is:inline>
     const progressBar=document.getElementById("progressBar");

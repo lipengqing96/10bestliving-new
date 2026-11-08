@@ -45,7 +45,7 @@ if (!post) Astro.redirect("/404");
   <meta name="lhverifycode" content="32dc01246faccb7f5b3cad5016dd5033" />
   <title>{post.title} | 10Best Living</title>
   <meta property="og:title" content={post.title} />
-  <meta property="og:description" content="Curated luxury product reviews for discerning lifestyles." />
+  <meta property="og:description" content="為講究品味的生活精選頂級產品評測。" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href={Astro.site + Astro.url.pathname} />
@@ -60,11 +60,11 @@ if (!post) Astro.redirect("/404");
         <span class="text-xs text-muted tracking-[0.2em] uppercase font-sans">Living</span>
       </a>
       <nav class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-dark hover:text-gold transition-colors font-medium text-sm">Home</a>
-        <a href="/categories" class="text-dark hover:text-gold transition-colors font-medium text-sm">Categories</a>
-        <a href="/about" class="text-dark hover:text-gold transition-colors font-medium text-sm">About</a>
-        <a href="/contact" class="text-dark hover:text-gold transition-colors font-medium text-sm">Contact</a>
-        <a href="/blog" class="btn-primary text-sm">Read Reviews</a>
+        <a href="/" class="text-dark hover:text-gold transition-colors font-medium text-sm">首頁</a>
+        <a href="/categories" class="text-dark hover:text-gold transition-colors font-medium text-sm">分類</a>
+        <a href="/about" class="text-dark hover:text-gold transition-colors font-medium text-sm">關於我們</a>
+        <a href="/contact" class="text-dark hover:text-gold transition-colors font-medium text-sm">聯絡我們</a>
+        <a href="/blog" class="btn-primary text-sm">瀏覽評測</a>
       </nav>
       <button id="menuBtn" class="md:hidden p-2 text-dark" aria-label="Menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y1="6"/><line x1="3" y1="12" x2="21" y1="12"/><line x1="3" y1="18" x2="21" y1="18"/></svg>
@@ -76,11 +76,11 @@ if (!post) Astro.redirect("/404");
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <nav class="flex flex-col items-center gap-6">
-      <a href="/" class="text-white text-2xl font-serif hover:text-gold transition-colors">Home</a>
-      <a href="/categories" class="text-white text-2xl font-serif hover:text-gold transition-colors">Categories</a>
-      <a href="/about" class="text-white text-2xl font-serif hover:text-gold transition-colors">About</a>
-      <a href="/contact" class="text-white text-2xl font-serif hover:text-gold transition-colors">Contact</a>
-      <a href="/blog" class="btn-primary mt-4">Read Reviews</a>
+      <a href="/" class="text-white text-2xl font-serif hover:text-gold transition-colors">首頁</a>/a>
+      <a href="/categories" class="text-white text-2xl font-serif hover:text-gold transition-colors">分類</a>
+      <a href="/about" class="text-white text-2xl font-serif hover:text-gold transition-colors">關於我們</a>/a>
+      <a href="/contact" class="text-white text-2xl font-serif hover:text-gold transition-colors">聯絡我們</a>/a>
+      <a href="/blog" class="btn-primary mt-4">瀏覽評測</a>
     </nav>
   </div>
   
@@ -97,45 +97,45 @@ if (!post) Astro.redirect("/404");
             <span class="font-serif text-2xl font-bold leading-none"><span class="gold-text">10</span><span>Best</span></span>
             <span class="text-xs text-muted tracking-[0.2em] uppercase font-sans">Living</span>
           </div>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-sm">Curated reviews for discerning lifestyles. We test everything so you don&apos;t have to.</p>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-sm">為講究品味的您精選評測。我們測試一切，讓您無需費心。</p>
         </div>
         <div>
           <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Explore</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/blog" class="text-gray-400 hover:text-gold transition-colors">Reviews</a></li>
-            <li><a href="/categories" class="text-gray-400 hover:text-gold transition-colors">Categories</a></li>
-            <li><a href="/about" class="text-gray-400 hover:text-gold transition-colors">About Us</a></li>
-            <li><a href="/contact" class="text-gray-400 hover:text-gold transition-colors">Contact</a></li>
+            <li><a href="/blog" class="text-gray-400 hover:text-gold transition-colors">評測</a></li>
+            <li><a href="/categories" class="text-gray-400 hover:text-gold transition-colors">分類</a></li>
+            <li><a href="/about" class="text-gray-400 hover:text-gold transition-colors">關於我們</a></li>
+            <li><a href="/contact" class="text-gray-400 hover:text-gold transition-colors">聯絡我們</a>/a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Categories</h4>
+          <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">分類</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/blog?category=home-kitchen" class="text-gray-400 hover:text-gold transition-colors">Home & Kitchen</a></li>
-            <li><a href="/blog?category=fitness-health" class="text-gray-400 hover:text-gold transition-colors">Fitness & Health</a></li>
-            <li><a href="/blog?category=beauty-care" class="text-gray-400 hover:text-gold transition-colors">Beauty & Personal Care</a></li>
-            <li><a href="/blog?category=smart-home" class="text-gray-400 hover:text-gold transition-colors">Smart Home</a></li>
+            <li><a href="/blog?category=home-kitchen" class="text-gray-400 hover:text-gold transition-colors">居家與廚房</a></li>
+            <li><a href="/blog?category=fitness-health" class="text-gray-400 hover:text-gold transition-colors">健身與健康</a></li>
+            <li><a href="/blog?category=beauty-care" class="text-gray-400 hover:text-gold transition-colors">美容與個人護理</a></li>
+            <li><a href="/blog?category=smart-home" class="text-gray-400 hover:text-gold transition-colors">智能家居</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Legal</h4>
           <ul class="space-y-3 text-sm">
-            <li><a href="/privacy" class="text-gray-400 hover:text-gold transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms-of-service" class="text-gray-400 hover:text-gold transition-colors">Terms of Service</a></li>
+            <li><a href="/privacy" class="text-gray-400 hover:text-gold transition-colors">隱私權政策</a></li>
+            <li><a href="/terms-of-service" class="text-gray-400 hover:text-gold transition-colors">服務條款</a></li>
             <li><a href="/affiliate-disclosure" class="text-gray-400 hover:text-gold transition-colors">Affiliate Disclosure</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-white/10 pt-8 text-center">
-        <p class="text-gray-500 text-xs leading-relaxed max-w-2xl mx-auto mb-4">As an Amazon Associate we earn from qualifying purchases. All reviews are independent and unbiased.</p>
-        <p class="text-gray-600 text-xs">&copy; 2026 10Best Living. All rights reserved.</p>
+        <p class="text-gray-500 text-xs leading-relaxed max-w-2xl mx-auto mb-4">作為Amazon聯盟會員，我們從符合資格的購買中獲得佣金。所有評測均獨立公正。</p>
+        <p class="text-gray-600 text-xs">&copy; 2026 10Best Living. 版權所有。</p>
       </div>
     </div>
   </footer>
   
   <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-dark text-white px-6 py-4 flex items-center justify-center gap-4 z-50 hidden">
-    <p class="text-sm text-gray-300">We use cookies to enhance your experience. By continuing, you agree to our privacy policy.</p>
-    <button id="acceptCookies" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-light text-dark font-semibold rounded-lg text-sm hover:opacity-90">Accept</button>
+    <p class="text-sm text-gray-300">我們使用Cookie以提升您的體驗。繼續瀏覽即表示您同意我們的隱私權政策。</p>
+    <button id="acceptCookies" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-light text-dark font-semibold rounded-lg text-sm hover:opacity-90">接受</button>
   </div>
   <script is:inline>
     const progressBar=document.getElementById("progressBar");
@@ -161,7 +161,7 @@ if (!post) Astro.redirect("/404");
       <img src="{post.featuredImg}" alt="{post.title}" class="w-full h-64 md:h-80 object-cover rounded-2xl mb-8 shadow-card" loading="eager"/>
       <div class="flex items-center gap-3 mb-6">
         <span class="px-3 py-1 rounded-full text-sm font-medium bg-gold/20 text-gold">{post.category}</span>
-        <span class="text-gray-600">{post.readTime} read &middot; {post.date}</span>
+        <span class="text-gray-600">{post.readTime} &middot; {post.date}</span>
       </div>
       <h1 class="font-serif text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">{post.title}</h1>
       <div class="w-16 h-1 bg-gradient-to-r from-gold to-gold-light rounded-full mb-8"></div>
