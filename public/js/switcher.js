@@ -24,6 +24,7 @@
       featured_title: '人氣評測',
       editor_picks: '編輯精選',
       browse_all: '查看全部評測',
+      browse_review: '瀏覽評測',
       newsletter_tagline: '電子報',
       newsletter_title: '加入5萬位講究品味的購物者',
       newsletter_desc: '每週為您送去精選好物、獨家優惠和專家購買指南。',
@@ -64,6 +65,7 @@
       featured_title: 'Featured Reviews',
       editor_picks: 'Editor Picks',
       browse_all: 'View All Reviews',
+      browse_review: 'Read Review',
       newsletter_tagline: 'Newsletter',
       newsletter_title: 'Join 50,000 discerning shoppers',
       newsletter_desc: 'Get curated picks, exclusive deals, and expert buying guides delivered weekly.',
@@ -106,7 +108,6 @@
     const dict = T[lang] || T['zh-TW'];
     document.documentElement.lang = lang === 'zh-TW' ? 'zh-TW' : 'en';
     
-    // Update all [data-i18n] elements (innerHTML for HTML content, textContent for plain text)
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (key && dict[key]) {
@@ -114,7 +115,6 @@
       }
     });
     
-    // Update placeholders
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
       if (key && dict[key]) {
@@ -122,7 +122,6 @@
       }
     });
     
-    // Update button styles
     document.querySelectorAll('[data-lang-btn]').forEach(btn => {
       const btnLang = btn.getAttribute('data-lang');
       if (btnLang === lang) {
