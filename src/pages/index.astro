@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductImage from '../components/ProductImage.astro';
+const t = { editor_picks: '編輯精選', best_value: '最佳性價比', our_pick: '我們的推薦', top_choice: '首選之選' };
 import CTA from '../components/CTA.astro';
 
 const categories = [
@@ -34,7 +35,7 @@ const featuredReviews = [
     category: '智能家居',
     emoji: '🤖',
     gradient: 'from-blue-50 via-indigo-50 to-violet-50',
-    badge: null,
+    badge: null, badgeKey: null,
     image: 'robot-vacuum.jpg',
     readTime: '7 分鐘閱讀',
   },
@@ -56,7 +57,7 @@ const featuredReviews = [
     category: '居家與廚房',
     emoji: '☕',
     gradient: 'from-amber-50 via-yellow-50 to-orange-50',
-    badge: null,
+    badge: null, badgeKey: null,
     image: 'coffee.jpg',
     readTime: '6 分鐘閱讀',
   },
@@ -78,7 +79,7 @@ const featuredReviews = [
     category: '臥室',
     emoji: '🛏️',
     gradient: 'from-violet-50 via-purple-50 to-fuchsia-50',
-    badge: null,
+    badge: null, badgeKey: null,
     image: 'weighted-blanket.jpg',
     readTime: '5 分鐘閱讀',
   },
@@ -274,7 +275,7 @@ const allReviews = [
               {review.badge && (
                 <div class="absolute top-4 left-4">
                   <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md" style="background: linear-gradient(135deg, #C9A962, #E8D5B0); color: #1A1A1A;">
-                    {review.badge}
+                    t[review.badgeKey] || "";
                   </span>
                 </div>
               )}
@@ -310,7 +311,7 @@ const allReviews = [
               {review.badge && (
                 <div class="absolute top-4 left-4">
                   <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md" style="background: linear-gradient(135deg, #C9A962, #E8D5B0); color: #1A1A1A;">
-                    {review.badge}
+                    t[review.badgeKey] || "";
                   </span>
                 </div>
               )}
