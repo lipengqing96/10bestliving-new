@@ -47,6 +47,8 @@
       categories_page_title: '產品分類', about_page_title: '關於10Best Living', contact_page_title: '聯絡我們',
 
       footer_copyright: '\u00a9 2026 10Best Living. 版權所有。',
+      footer_home: "Home", footer_about: "About Us", footer_contact: "Contact",
+      category_home_kitchen: "Home & Kitchen", category_fitness_health: "Fitness & Health", category_smart_home: "Smart Home", category_beauty: "Beauty Care", category_outdoor: "Outdoor & Travel", category_sports: "Sports Equipment", category_cosmetics: "Beauty & Cosmetics", category_fashion_shoes: "Fashion & Footwear", category_accessories: "Clothing & Accessories",
 
       read_time_suffix: '分鐘閱讀', by_team: '由10Best Living團隊評測', share: '分享此評測：', back_to_top: '回到頂部',
 
@@ -107,6 +109,8 @@
       categories_page_title: 'Product Categories', about_page_title: 'About 10Best Living', contact_page_title: 'Contact Us',
 
       footer_copyright: '\u00a9 2026 10Best Living. All rights reserved.',
+      footer_home: "Home", footer_about: "About Us", footer_contact: "Contact",
+      category_home_kitchen: "Home & Kitchen", category_fitness_health: "Fitness & Health", category_smart_home: "Smart Home", category_beauty: "Beauty Care", category_outdoor: "Outdoor & Travel", category_sports: "Sports Equipment", category_cosmetics: "Beauty & Cosmetics", category_fashion_shoes: "Fashion & Footwear", category_accessories: "Clothing & Accessories",
 
       read_time_suffix: ' min read', by_team: 'By 10Best Living Team', share: 'Share this review:', back_to_top: 'Back to top',
 
@@ -249,6 +253,11 @@
     });
 
     window.__setLang = setLang;
+    window.__getLang = getLang;
+
+    document.querySelectorAll("[data-lang-content]").forEach(function(el) {
+      el.style.display = el.dataset.langContent === lang ? "" : "none";
+    });
 
     window.__getLang = getLang;
 

@@ -63,5 +63,13 @@ export const i18n = {
   "footer_terms": "服務條款",
   "footer_affiliate": "聯盟披露",
   "affiliate_note": "作為Amazon聯盟會員，我們從符合資格的購買中獲得佣金。所有推薦均獨立且公正。",
+    "hero_btn_browse": "瀏覽評測",
+  "hero_btn_categories": "瀏覽分類",
+  "trust_products": "500+款產品實測",
+  "fair_ranking": "公正排名",
+  "editor_picks": "編輯精選",
+  "browse_all": "查看全部評測",
+  "browse_review": "瀏覽評測",
+  "newsletter_tagline": "電子報",
   "footer_copyright": "© 2026 10Best Living. 版權所有。"
 };
