@@ -10,15 +10,21 @@
       </a>
 
       <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200">首頁</a>
-        <a href="/categories" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200">分類</a>
-        <a href="/blog" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200"> 評測文章 </a>
-        <a href="/about" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200">關於我們</a>
-        <a href="/contact" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200">聯絡我們</a>
-        <a href="/blog" class="gold-btn px-5 py-2.5 rounded-lg text-sm">
-          瀏覽評測
-        </a>
+      <div class="hidden md:flex items-center gap-6 lg:gap-8">
+        <a href="/" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200" data-i18n="nav_home">首頁</a>
+        <a href="/categories" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200" data-i18n="nav_categories">分類</a>
+        <a href="/blog" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200" data-i18n="nav_blog">評測文章</a>
+        <a href="/about" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200" data-i18n="nav_about">關於我們</a>
+        <a href="/contact" class="text-sm font-medium text-primary hover:text-gold transition-colors duration-200" data-i18n="nav_contact">聯絡我們</a>
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher flex items-center gap-1 ml-2 pl-2" style="border-left:1px solid #E8E4DD;padding-left:0.75rem;margin-left:0.25rem">
+          <button data-lang-btn data-lang="zh-TW" class="lang-btn px-2 py-1 rounded text-xs font-medium transition-all duration-200 bg-gold text-dark" aria-label="繁體中文">繁</button>
+          <span class="text-text-silent text-xs">/</span>
+          <button data-lang-btn data-lang="en" class="lang-btn px-2 py-1 rounded text-xs font-medium transition-all duration-200 text-text-muted hover:text-primary" aria-label="Switch to English">EN</button>
+        </div>
+
+        <a href="/blog" class="gold-btn px-5 py-2.5 rounded-lg text-sm" data-i18n="nav_browse">瀏覽評測</a>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -34,14 +40,20 @@
   <button id="mobile-menu-close" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors" aria-label="關閉選單">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
   </button>
-  <a href="/" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors">首頁</a>
-  <a href="/categories" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors">分類</a>
-  <a href="/blog" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors"> 評測文章 </a>
-  <a href="/about" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors">關於我們</a>
-  <a href="/contact" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors">聯絡我們</a>
-  <a href="/blog" class="mt-4 gold-btn px-8 py-3 rounded-lg text-base">
-    瀏覽評測
-  </a>
+  <a href="/" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors" data-i18n="nav_home">首頁</a>
+  <a href="/categories" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors" data-i18n="nav_categories">分類</a>
+  <a href="/blog" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors" data-i18n="nav_blog">評測文章</a>
+  <a href="/about" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors" data-i18n="nav_about">關於我們</a>
+  <a href="/contact" class="mobile-nav-link text-xl font-serif text-white hover:text-gold transition-colors" data-i18n="nav_contact">聯絡我們</a>
+
+  <!-- Mobile Lang Switcher -->
+  <div class="flex items-center gap-2 mt-4" style="border:1px solid rgba(201,169,98,0.3);border-radius:8px;padding:6px 12px">
+    <button data-lang-btn data-lang="zh-TW" class="mobile-lang-btn px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 bg-gold text-dark" aria-label="繁體中文">繁體</button>
+    <span class="text-gray-400 text-sm">/</span>
+    <button data-lang-btn data-lang="en" class="mobile-lang-btn px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 text-gray-300 hover:text-white" aria-label="English">EN</button>
+  </div>
+
+  <a href="/blog" class="mt-4 gold-btn px-8 py-3 rounded-lg text-base" data-i18n="nav_browse">瀏覽評測</a>
 </div>
 
 <script>
@@ -51,7 +63,6 @@
   const closeBtn = document.getElementById('mobile-menu-close');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  // Scroll effect
   let lastScroll = 0;
   window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
@@ -63,7 +74,6 @@
     lastScroll = currentScroll;
   }, { passive: true });
 
-  // Mobile menu
   function openMenu() {
     menu.classList.remove('opacity-0', 'pointer-events-none');
     menu.classList.add('opacity-100', 'pointer-events-auto');

@@ -23,7 +23,7 @@ const featuredReviews = [
     category: '居家與廚房',
     emoji: '🥤',
     gradient: 'from-amber-50 via-orange-50 to-yellow-50',
-    badge: "編輯精選",
+    badge: "<span data-i18n=\"editor_picks\">編輯精選</span>",
     image: 'blender.jpg',
     readTime: '5 分鐘閱讀',
   },
@@ -151,11 +151,11 @@ const allReviews = [
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A962" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span class="text-sm font-medium text-[#1A1A1A]">專業評測</span>
+              <span class="text-sm font-medium text-[#1A1A1A]"><span data-i18n="expert_reviews"><span data-i18n="expert_reviews">專業評測</span></span></span>
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A962" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span class="text-sm font-medium text-[#1A1A1A]">公正排名</span>
+              <span class="text-sm font-medium text-[#1A1A1A]"><span data-i18n="fair_ranking"><span data-i18n="fair_ranking">公正排名</span></span></span>
             </div>
           </div>
         </div>
@@ -253,11 +253,11 @@ const allReviews = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-end justify-between mb-12" data-aos="fade-up">
         <div>
-          <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#C9A962] mb-3">精選推薦</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A]">編輯精選</h2>
+          <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#C9A962] mb-3"><span data-i18n="featured_title">精選推薦</span></p>
+          <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A]"><span data-i18n="editor_picks">編輯精選</span></h2>
         </div>
         <a href="/blog" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-[#C9A962] hover:text-[#B8944F] transition-colors">
-          查看全部評測
+          <span data-i18n="browse_all"><span data-i18n="browse_all">查看全部評測</span></span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </div>
@@ -355,23 +355,23 @@ const allReviews = [
   {/* 電子報 Section */}
   <section class="py-24" style="background: linear-gradient(135deg, #C9A962 0%, #E8D5B0 50%, #C9A962 100%);">
     <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center" data-aos="fade-up">
-      <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#1A1A1A]/60 mb-4">電子報</p>
-      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-5">加入5萬位講究品味的購物者</h2>
+      <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#1A1A1A]/60 mb-4"><span data-i18n="newsletter_tagline">電子報</span></p>
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-5"><span data-i18n="newsletter_title">加入5萬位講究品味的購物者</span></h2>
       <p class="text-[#1A1A1A]/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-        每週為您送去精選好物、獨家優惠和專家購買指南。
+        <span data-i18n="newsletter_desc"><span data-i18n="newsletter_desc">每週為您送去精選好物、獨家優惠和專家購買指南。</span></span>
       </p>
       <form class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
         <input
           type="email"
-          placeholder="請輸入您的電子郵件地址"
+          data-i18n-placeholder="newsletter_placeholder" data-i18n-placeholder="newsletter_placeholder" placeholder="請輸入您的電子郵件地址"
           required
           class="flex-1 px-5 py-4 rounded-xl bg-white/95 border-2 border-[#C9A962]/30 focus:border-[#C9A962] focus:outline-none text-[#1A1A1A] placeholder:text-[#9A9A9A] text-base transition-colors shadow-sm"
         />
         <button type="submit" class="px-8 py-4 rounded-xl font-semibold text-[#1A1A1A] shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300" style="background: #1A1A1A; color: #C9A962;">
-          訂閱
+          <span data-i18n="newsletter_btn">訂閱</span>
         </button>
       </form>
-      <p class="text-xs text-[#1A1A1A]/50 mt-4">絕不濫發郵件。隨時可取消訂閱。我們尊重您的隱私權。</p>
+      <p class="text-xs text-[#1A1A1A]/50 mt-4"><span data-i18n="newsletter_privacy">絕不濫發郵件。隨時可取消訂閱。我們尊重您的隱私權。</span></p>
     </div>
   </section>
 </BaseLayout>
