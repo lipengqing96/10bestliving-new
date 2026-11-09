@@ -21,7 +21,7 @@
       trust_products: '500+款產品實測',
       expert_reviews: '專家評論',
       fair_ranking: '公正排名',
-      featured_title: '人氣評測',
+      featured_title: '編輯精選',
       editor_picks: '編輯精選',
       browse_all: '查看全部評測',
       browse_review: '瀏覽評測',
