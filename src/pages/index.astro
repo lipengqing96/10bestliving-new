@@ -1,19 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductImage from '../components/ProductImage.astro';
-const t = { editor_picks: '編輯精選', best_value: '最佳性價比', our_pick: '我們的推薦', top_choice: '首選之選' };
 import CTA from '../components/CTA.astro';
 
 const categories = [
-  { slug: '#home-kitchen', name: '居家與廚房', emoji: '🍳', gradient: 'from-amber-50 via-orange-50 to-stone-100', count: 4, accent: '#C9A962' },
-  { slug: '#fitness-health', name: '健身與健康', emoji: '💪', gradient: 'from-emerald-50 via-teal-50 to-cyan-50', count: 4, accent: '#2D5A4C' },
-  { slug: '#smart-home', name: '智能家居', emoji: '🏡', gradient: 'from-blue-50 via-indigo-50 to-violet-50', count: 3, accent: '#4F46E5' },
-  { slug: '#beauty', name: '美容護理', emoji: '✨', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#BE185D' },
-  { slug: '#outdoor', name: '戶外與旅行', emoji: '🏔️', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
-  { slug: '#sports', name: '\u904b\u52d5\u7528\u54c1', emoji: '\ud83c\udfc5', gradient: 'from-emerald-50 via-green-50 to-teal-50', count: 2, accent: '#059669' },
-  { slug: '#beauty-cosmetics', name: '\u7f8e\u5bb9\u5316\u88dd\u54c1', emoji: '\ud83d\udc84', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#DB2777' },
-  { slug: '#fashion-shoes', name: '\u7e54\u670d\u978b\u5e3d', emoji: '\ud83d\udc5f', gradient: 'from-violet-50 via-purple-50 to-indigo-50', count: 2, accent: '#7C3AED' },
-  { slug: '#accessories', name: '\u8863\u670d\u98fe\u7269', emoji: '\ud83d\udc8d', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
+  { slug: '#home-kitchen', name: '居家與廚房', i18nKey: 'cat_home_kitchen', emoji: '🍳', gradient: 'from-amber-50 via-orange-50 to-stone-100', count: 4, accent: '#C9A962' },
+  { slug: '#fitness-health', name: '健身與健康', i18nKey: 'cat_fitness_health', emoji: '💪', gradient: 'from-emerald-50 via-teal-50 to-cyan-50', count: 4, accent: '#2D5A4C' },
+  { slug: '#smart-home', name: '智能家居', i18nKey: 'cat_smart_home', emoji: '🏡', gradient: 'from-blue-50 via-indigo-50 to-violet-50', count: 3, accent: '#4F46E5' },
+  { slug: '#beauty', name: '美容護理', i18nKey: 'cat_beauty', emoji: '✨', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#BE185D' },
+  { slug: '#outdoor', name: '戶外與旅行', i18nKey: 'cat_outdoor', emoji: '🏔️', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
+  { slug: '#sports', name: '\u904b\u52d5\u7528\u54c1', i18nKey: 'cat_sports', emoji: '\ud83c\udfc5', gradient: 'from-emerald-50 via-green-50 to-teal-50', count: 2, accent: '#059669' },
+  { slug: '#beauty-cosmetics', name: '\u7f8e\u5bb9\u5316\u88dd\u54c1', i18nKey: 'cat_cosmetics', emoji: '\ud83d\udc84', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#DB2777' },
+  { slug: '#fashion-shoes', name: '\u7e54\u670d\u978b\u5e3d', i18nKey: 'cat_fashion_shoes', emoji: '\ud83d\udc5f', gradient: 'from-violet-50 via-purple-50 to-indigo-50', count: 2, accent: '#7C3AED' },
+  { slug: '#accessories', name: '\u8863\u670d\u98fe\u7269', i18nKey: 'cat_accessories', emoji: '\ud83d\udc8d', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
 ];
 
 const featuredReviews = [
@@ -24,7 +23,7 @@ const featuredReviews = [
     category: '居家與廚房',
     emoji: '🥤',
     gradient: 'from-amber-50 via-orange-50 to-yellow-50',
-    badge: "編輯精選",
+    badge: '編輯精選',
     image: 'blender.jpg',
     readTime: '5 分鐘閱讀',
   },
@@ -35,7 +34,7 @@ const featuredReviews = [
     category: '智能家居',
     emoji: '🤖',
     gradient: 'from-blue-50 via-indigo-50 to-violet-50',
-    badge: null, badgeKey: null,
+    badge: null,
     image: 'robot-vacuum.jpg',
     readTime: '7 分鐘閱讀',
   },
@@ -57,7 +56,7 @@ const featuredReviews = [
     category: '居家與廚房',
     emoji: '☕',
     gradient: 'from-amber-50 via-yellow-50 to-orange-50',
-    badge: null, badgeKey: null,
+    badge: null,
     image: 'coffee.jpg',
     readTime: '6 分鐘閱讀',
   },
@@ -79,7 +78,7 @@ const featuredReviews = [
     category: '臥室',
     emoji: '🛏️',
     gradient: 'from-violet-50 via-purple-50 to-fuchsia-50',
-    badge: null, badgeKey: null,
+    badge: null,
     image: 'weighted-blanket.jpg',
     readTime: '5 分鐘閱讀',
   },
@@ -275,19 +274,19 @@ const allReviews = [
               {review.badge && (
                 <div class="absolute top-4 left-4">
                   <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md" style="background: linear-gradient(135deg, #C9A962, #E8D5B0); color: #1A1A1A;">
-                    t[review.badgeKey] || "";
+                    {review.badge}
                   </span>
                 </div>
               )}
 <div class="p-6">
               <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight">
-                {review.title}
+                <span class="feat-title" data-i18n-feat="{i}" data-i18n-type="title">{review.title}</span>
               </h3>
               <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4">
-                {review.excerpt}
+                <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4" data-i18n-feat="{i}" data-i18n-type="excerpt">{review.excerpt}</p>
               </p>
               <div class="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
-                <span class="text-xs text-[#9A9A9A]">{review.readTime}</span>
+                <span class="text-xs text-[#9A9A9A]" data-i18n-feat="{i}" data-i18n-type="readtime">{review.readTime}</span>
                 <span class="inline-flex items-center gap-1 text-sm font-semibold text-[#C9A962] group/link" data-i18n="browse_review">
                   瀏覽評測
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -311,19 +310,19 @@ const allReviews = [
               {review.badge && (
                 <div class="absolute top-4 left-4">
                   <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md" style="background: linear-gradient(135deg, #C9A962, #E8D5B0); color: #1A1A1A;">
-                    t[review.badgeKey] || "";
+                    {review.badge}
                   </span>
                 </div>
               )}
 <div class="p-6">
               <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight">
-                {review.title}
+                <span class="feat-title" data-i18n-feat="{i}" data-i18n-type="title">{review.title}</span>
               </h3>
               <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4">
-                {review.excerpt}
+                <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4" data-i18n-feat="{i}" data-i18n-type="excerpt">{review.excerpt}</p>
               </p>
               <div class="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
-                <span class="text-xs text-[#9A9A9A]">{review.readTime}</span>
+                <span class="text-xs text-[#9A9A9A]" data-i18n-feat="{i}" data-i18n-type="readtime">{review.readTime}</span>
                 <span class="inline-flex items-center gap-1 text-sm font-semibold text-[#C9A962] group/link" data-i18n="browse_review">
                   <span data-i18n="browse_review">瀏覽評測</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
