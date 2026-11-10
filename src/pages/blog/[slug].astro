@@ -1,161 +1,118 @@
 ---
-title: "Review | 10Best Living"
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  return [
-    { params: { slug: "top-10-best-portable-blenders-smoothies-2026" } },
-    { params: { slug: "top-10-best-led-desk-lamps-work-from-home" } },
-    { params: { slug: "top-10-best-yoga-mats-beginners" } },
-    { params: { slug: "top-10-best-robot-vacuums-under-300" } },
-    { params: { slug: "top-10-best-essential-oil-diffusers" } },
-    { params: { slug: "top-10-best-air-fryers-small-kitchen" } },
-    { params: { slug: "top-10-best-weighted-blankets-better-sleep" } },
-    { params: { slug: "top-10-best-electric-kettles-precise-temperature" } },
-    { params: { slug: "top-10-best-standing-desks-converter" } },
-    { params: { slug: "top-10-best-cordless-vacuums-lightweight" } },
-    { params: { slug: "top-10-best-skincare-fridges-mini" } },
-    { params: { slug: "top-10-best-insulated-water-bottles" } },
-    { params: { slug: "top-10-best-massage-guns-recovery" } },
-    { params: { slug: "top-10-best-coffee-makers-single-serve" } },
-    { params: { slug: "top-10-best-area-rugs-living-room" } },
-    { params: { slug: "best-eu-travel-sim-lycamobile-france-review" } },
-  ];
+  const postFiles = import.meta.glob('../../data/posts/*.json', { eager: true });
+  return Object.keys(postFiles).map(p => ({ params: { slug: p.split('/').pop().replace('.json', '') } }));
 }
 
 const { slug } = Astro.params;
+const postFiles = import.meta.glob('../../data/posts/*.json', { eager: true });
 const posts = {};
-const postFiles = import.meta.glob("../../data/posts/*.json", { eager: true });
-for (const [path, module] of Object.entries(postFiles)) {
-  const filename = path.split("/").pop();
-  const postSlug = filename.replace(".json", "");
-  posts[postSlug] = module.default;
+for (const [p, mod] of Object.entries(postFiles)) {
+  posts[p.split('/').pop().replace('.json', '')] = mod.default;
 }
 const post = posts[slug];
-if (!post) Astro.redirect("/404");
+if (!post) Astro.redirect('/404');
+
+const catZH = {
+  Kitchen:'居家與廚房', 'Home & Kitchen':'居家與廚房',
+  Fitness:'健身與健康', Health:'健身與健康', 'Fitness & Health':'健身與健康',
+  'Smart Home':'智能家居',
+  Beauty:'美容護理', 'Beauty Care':'美容護理',
+  Travel:'戶外與旅行', 'Outdoor & Travel':'戶外與旅行',
+  Sports:'運動用品', 'Sports Equipment':'運動用品',
+  Cosmetics:'美容化妝品', 'Beauty & Cosmetics':'美容化妝品',
+  Fashion:'織服鞋帽', 'Fashion & Footwear':'織服鞋帽', Clothing:'服裝鞋帽',
+  Accessories:'衣服飾物', 'Clothing & Accessories':'衣服飾物',
+  Bedroom:'臥室', 'Living Room':'客廳',
+};
+const catEN = {
+  Kitchen:'Home & Kitchen', 'Home & Kitchen':'Home & Kitchen',
+  Fitness:'Fitness & Health', Health:'Fitness & Health', 'Fitness & Health':'Fitness & Health',
+  'Smart Home':'Smart Home',
+  Beauty:'Beauty Care', 'Beauty Care':'Beauty Care',
+  Travel:'Outdoor & Travel', 'Outdoor & Travel':'Outdoor & Travel',
+  Sports:'Sports Equipment', 'Sports Equipment':'Sports Equipment',
+  Cosmetics:'Beauty & Cosmetics', 'Beauty & Cosmetics':'Beauty & Cosmetics',
+  Fashion:'Fashion & Footwear', 'Fashion & Footwear':'Fashion & Footwear', Clothing:'Fashion & Footwear',
+  Accessories:'Clothing & Accessories', 'Clothing & Accessories':'Clothing & Accessories',
+  Bedroom:'Bedroom', 'Living Room':'Living Room',
+};
+const categoryZh = catZH[post.category] || post.category;
+const categoryEn = catEN[post.category] || post.category;
+const titleZh = post.title_zh || post.title;
+const contentZh = post.content_zh || post.content;
+const description = post.description_zh || '專業評測與推薦';
 ---
 
-
-<!doctype html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="description" content="為講究品味的生活精選頂級產品評測." />
-  <meta name="lhverifycode" content="32dc01246faccb7f5b3cad5016dd5033" />
-  <title>{post.title} | 10Best Living</title>
-  <meta property="og:title" content={post.title} />
-  <meta property="og:description" content="為講究品味的生活精選頂級產品評測。" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href={Astro.site + Astro.url.pathname} />
-</head>
-<body class="min-h-screen bg-white text-dark">
-  <div id="readingProgress" class="fixed top-0 left-0 w-full h-0.5 z-[9999]"><div id="progressBar" class="h-full bg-gradient-to-r from-[#C9A962] to-[#E8D5B0] w-0 transition-all duration-100"></div></div>
-  
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-[#E8E4DD]" id="mainHeader">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="/" class="flex flex-col items-start">
-        <span class="font-serif text-2xl font-bold leading-none"><span class="gold-text">10</span><span>Best</span></span>
-        <span class="text-xs text-muted tracking-[0.2em] uppercase font-sans">Living</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-dark hover:text-gold transition-colors font-medium text-sm">首頁</a>
-        <a href="/categories" class="text-dark hover:text-gold transition-colors font-medium text-sm">分類</a>
-        <a href="/about" class="text-dark hover:text-gold transition-colors font-medium text-sm">關於我們</a>
-        <a href="/contact" class="text-dark hover:text-gold transition-colors font-medium text-sm">聯絡我們</a>
-        <a href="/blog" class="btn-primary text-sm">瀏覽評測</a>
-      </nav>
-      <button id="menuBtn" class="md:hidden p-2 text-dark" aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y1="6"/><line x1="3" y1="12" x2="21" y1="12"/><line x1="3" y1="18" x2="21" y1="18"/></svg>
-      </button>
-    </div>
-  </header>
-  <div id="mobileMenu" class="fixed inset-0 z-40 bg-dark/95 backdrop-blur-sm hidden flex-col items-center justify-center gap-8">
-    <button id="closeMenu" class="absolute top-5 right-6 text-white p-2" aria-label="Close">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <nav class="flex flex-col items-center gap-6">
-      <a href="/" class="text-white text-2xl font-serif hover:text-gold transition-colors">首頁</a>/a>
-      <a href="/categories" class="text-white text-2xl font-serif hover:text-gold transition-colors">分類</a>
-      <a href="/about" class="text-white text-2xl font-serif hover:text-gold transition-colors">關於我們</a>/a>
-      <a href="/contact" class="text-white text-2xl font-serif hover:text-gold transition-colors">聯絡我們</a>/a>
-      <a href="/blog" class="btn-primary mt-4">瀏覽評測</a>
-    </nav>
-  </div>
-  
-  <main class="pt-20">
-  
-  <button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-gold to-gold-light text-dark font-bold text-xl shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50 hover:scale-110" aria-label="Back to top">&#8593;</button>
-  
-  <footer class="bg-dark text-white pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-6 mb-12"><div class="section-divider"></div></div>
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-        <div>
-          <div class="flex flex-col items-start mb-4">
-            <span class="font-serif text-2xl font-bold leading-none"><span class="gold-text">10</span><span>Best</span></span>
-            <span class="text-xs text-muted tracking-[0.2em] uppercase font-sans">Living</span>
-          </div>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-sm">為講究品味的您精選評測。我們測試一切，讓您無需費心。</p>
+<BaseLayout title={titleZh + ' | 10Best Living'} description={description} path={Astro.url.pathname}>
+  <div class="bg-white text-dark min-h-screen pt-24 pb-16">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <a href="/blog" class="inline-flex items-center gap-2 text-sm text-text-muted hover:text-gold transition-colors mb-8">&#8592; Back to Reviews</a>
+      
+      {post.featuredImg && (
+        <div class="w-full aspect-[16/9] rounded-2xl overflow-hidden mb-8">
+          <img src={post.featuredImg} alt={titleZh} class="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div>
-          <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Explore</h4>
-          <ul class="space-y-3 text-sm">
-            <li><a href="/blog" class="text-gray-400 hover:text-gold transition-colors">評測</a></li>
-            <li><a href="/categories" class="text-gray-400 hover:text-gold transition-colors">分類</a></li>
-            <li><a href="/about" class="text-gray-400 hover:text-gold transition-colors">關於我們</a></li>
-            <li><a href="/contact" class="text-gray-400 hover:text-gold transition-colors">聯絡我們</a>/a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">分類</h4>
-          <ul class="space-y-3 text-sm">
-            <li><a href="/blog?category=home-kitchen" class="text-gray-400 hover:text-gold transition-colors">居家與廚房</a></li>
-            <li><a href="/blog?category=fitness-health" class="text-gray-400 hover:text-gold transition-colors">健身與健康</a></li>
-            <li><a href="/blog?category=beauty-care" class="text-gray-400 hover:text-gold transition-colors">美容與個人護理</a></li>
-            <li><a href="/blog?category=smart-home" class="text-gray-400 hover:text-gold transition-colors">智能家居</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-serif text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Legal</h4>
-          <ul class="space-y-3 text-sm">
-            <li><a href="/privacy" class="text-gray-400 hover:text-gold transition-colors">隱私權政策</a></li>
-            <li><a href="/terms-of-service" class="text-gray-400 hover:text-gold transition-colors">服務條款</a></li>
-            <li><a href="/affiliate-disclosure" class="text-gray-400 hover:text-gold transition-colors">Affiliate Disclosure</a></li>
-          </ul>
-        </div>
+      )}
+      
+      <div class="flex flex-wrap items-center gap-4 mb-6">
+        <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-primary" data-lang-content="zh-TW">{categoryZh}</span>
+        <span class="px-3 py-1 bg-cream rounded-full text-xs font-medium text-primary" data-lang-content="en">{categoryEn}</span>
+        <span class="text-sm text-text-muted">{post.date}</span>
+        <span class="text-sm text-text-muted">{post.readTime} read</span>
       </div>
-      <div class="border-t border-white/10 pt-8 text-center">
-        <p class="text-gray-500 text-xs leading-relaxed max-w-2xl mx-auto mb-4">作為Amazon聯盟會員，我們從符合資格的購買中獲得佣金。所有評測均獨立公正。</p>
-        <p class="text-gray-600 text-xs">&copy; 2026 10Best Living. 版權所有。</p>
+      
+      <h1 class="font-serif text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight" data-lang-content="zh-TW">{titleZh}</h1>
+      <h1 class="font-serif text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight hidden" data-lang-content="en">{post.title}</h1>
+      
+      <!-- Chinese content -->
+      <div class="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-primary prose-p:text-dark prose-p:leading-relaxed prose-li:ml-4" data-lang-content="zh-TW">
+        {(() => {
+          const NL = String.fromCharCode(10);
+          const lines = contentZh.split(NL);
+          return lines.map((line, i) => {
+            if (line.startsWith('# ')) return <h1 key={i} class="font-serif text-2xl lg:text-3xl font-bold text-primary my-8">{line.slice(2)}</h1>;
+            if (line.startsWith('## ')) return <h2 key={i} class="font-serif text-xl lg:text-2xl font-semibold text-primary my-6">{line.slice(3)}</h2>;
+            if (line.startsWith('### ')) return <h3 key={i} class="text-lg font-semibold text-primary my-4">{line.slice(4)}</h3>;
+            if (line.startsWith('| ') && line.includes('|--')) return null;
+            if (line.startsWith('| ')) {
+              const cells = line.split('|').filter(Boolean).map(c => c.trim());
+              return <div key={i} class="grid gap-2 py-2 border-b border-border text-sm" style={{gridTemplateColumns: `repeat(${cells.length}, 1fr)`}}>{cells.map((cell, j) => <div key={j} class="px-2">{cell}</div>)}</div>;
+            }
+            if (line.startsWith('- ')) return <li key={i} class="ml-4 list-disc">{line.slice(2)}</li>;
+            if (line.trim() === '') return <br key={i} />;
+            return <p key={i} class="my-3 leading-relaxed">{line}</p>;
+          });
+        })()}
+      </div>
+      
+      <!-- English content -->
+      <div class="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-primary prose-p:text-dark prose-p:leading-relaxed prose-li:ml-4" data-lang-content="en" style="display:none">
+        {(() => {
+          const NL = String.fromCharCode(10);
+          const lines = post.content.split(NL);
+          return lines.map((line, i) => {
+            if (line.startsWith('# ')) return <h1 key={i} class="font-serif text-2xl lg:text-3xl font-bold text-primary my-8">{line.slice(2)}</h1>;
+            if (line.startsWith('## ')) return <h2 key={i} class="font-serif text-xl lg:text-2xl font-semibold text-primary my-6">{line.slice(3)}</h2>;
+            if (line.startsWith('### ')) return <h3 key={i} class="text-lg font-semibold text-primary my-4">{line.slice(4)}</h3>;
+            if (line.startsWith('| ') && line.includes('|--')) return null;
+            if (line.startsWith('| ')) {
+              const cells = line.split('|').filter(Boolean).map(c => c.trim());
+              return <div key={i} class="grid gap-2 py-2 border-b border-border text-sm" style={{gridTemplateColumns: `repeat(${cells.length}, 1fr)`}}>{cells.map((cell, j) => <div key={j} class="px-2">{cell}</div>)}</div>;
+            }
+            if (line.startsWith('- ')) return <li key={i} class="ml-4 list-disc">{line.slice(2)}</li>;
+            if (line.trim() === '') return <br key={i} />;
+            return <p key={i} class="my-3 leading-relaxed">{line}</p>;
+          });
+        })()}
+      </div>
+      
+      <div class="mt-12 pt-8 border-t border-border flex items-center justify-between">
+        <span class="text-sm text-text-muted" data-i18n="share">Share this review:</span>
+        <button id="backToTop" class="gold-btn px-4 py-2 text-sm hidden" aria-label="Back to top">&#8593; Back to top</button>
       </div>
     </div>
-  </footer>
-  
-  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-dark text-white px-6 py-4 flex items-center justify-center gap-4 z-50 hidden">
-    <p class="text-sm text-gray-300">我們使用Cookie以提升您的體驗。繼續瀏覽即表示您同意我們的隱私權政策。</p>
-    <button id="acceptCookies" class="px-4 py-2 bg-gradient-to-r from-gold to-gold-light text-dark font-semibold rounded-lg text-sm hover:opacity-90">接受</button>
   </div>
-  <script is:inline>
-    const progressBar=document.getElementById("progressBar");
-    const backToTop=document.getElementById("backToTop");
-    window.addEventListener("scroll",()=>{
-      const total=document.body.scrollHeight-window.innerHeight;
-      if(progressBar) progressBar.style.width=(window.scrollY/total*100)+"%";
-      if(backToTop){backToTop.style.opacity=window.scrollY>400?"1":"0"; backToTop.style.pointerEvents=window.scrollY>400?"auto":"none";}
-    });
-    if(backToTop) backToTop.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
-    if(!localStorage.getItem("cookiesAccepted")){setTimeout(()=>{const b=document.getElementById("cookieBanner");if(b)b.classList.remove("hidden");},2000);}
-    const ac=document.getElementById("acceptCookies");
-    if(ac) ac.onclick=()=>{localStorage.setItem("cookiesAccepted","true");const b=document.getElementById("cookieBanner");if(b)b.classList.add("hidden");};
-  </script>
-  <script is:inline>
-    const menuBtn=document.getElementById("menuBtn"), closeMenu=document.getElementById("closeMenu"), mobileMenu=document.getElementById("mobileMenu");
-    if(menuBtn) menuBtn.onclick=()=>{mobileMenu.classList.remove("hidden");mobileMenu.classList.add("flex");};
-    if(closeMenu) closeMenu.onclick=()=>{mobileMenu.classList.add("hidden");mobileMenu.classList.remove("flex");};
-  </script>
-  
-  NEW_ARTICLE_HERE
-</body>
-</html>
+</BaseLayout>

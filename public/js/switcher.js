@@ -233,6 +233,10 @@
       }
 
     });
+    // Show/hide language-specific content blocks
+    document.querySelectorAll("[data-lang-content]").forEach(function(el) {
+      el.style.display = el.dataset.langContent === lang ? "" : "none";
+    })
 
   }
 
@@ -252,13 +256,6 @@
 
     });
 
-       window.__getLang = getLang;
-
-    document.querySelectorAll("[data-lang-content]").forEach(function(el) {
-      el.style.display = el.dataset.langContent === lang ? "" : "none";
-    });
-
-    window.__getLang = getLang;
 
   }
 

@@ -1,89 +1,50 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const reviews = [
-  { slug: 'top-10-best-portable-blenders-smoothies-2026', image: 'blender.jpg', title: '十大最佳便攜果汁機2026年推薦', category: '居家與廚房', emoji: '🥤', 分鐘閱讀Time: '5 分鐘閱讀', badge: '編輯精選' },
-  { slug: 'top-10-best-led-desk-lamps-work-from-home', image: 'led-lamp.jpg', title: '十大最佳LED檯燈書房工作燈2026年推薦', category: '家居與辦公', emoji: '💡', 分鐘閱讀Time: '6 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-yoga-mats-beginners', image: 'yoga-mat.jpg', title: '十大最佳瑜伽墊初學者入門2026年推薦', category: '健身與健康', emoji: '🧘', 分鐘閱讀Time: '5 分鐘閱讀', badge: '最佳性價比' },
-  { slug: 'top-10-best-robot-vacuums-under-300', image: 'robot-vacuum.jpg', title: '十大最佳300美元以內掃地機器人2026年推薦', category: '智能家居', emoji: '🤖', 分鐘閱讀Time: '7 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-essential-oil-diffusers', image: 'essential-oil.jpg', title: '十大最佳香薰擴散器2026年推薦', category: '健康養生', emoji: '🌿', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-air-fryers-small-kitchen', image: 'air-fryer.jpg', title: '十大最佳小型 廚房用品s in 2026', category: '居家與廚房', emoji: '🍟', 分鐘閱讀Time: '6 分鐘閱讀', badge: '首選之選' },
-  { slug: 'top-10-best-weighted-blankets-better-sleep', image: 'weighted-blanket.jpg', title: '十大最佳重力毯改善睡眠2026年推薦', category: '臥室', emoji: '🛏️', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-electric-kettles-precise-temperature', image: 'kettle.jpg', title: '十大最佳精密溫度控制電水壺2026年推薦', category: '居家與廚房', emoji: '☕', 分鐘閱讀Time: '6 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-standing-desks-converter', image: 'standing-desk.jpg', title: '十大最佳升降桌轉換器2026年推薦', category: '家居與辦公', emoji: '🪑', 分鐘閱讀Time: '6 分鐘閱讀', badge: '高端之選' },
-  { slug: 'top-10-best-cordless-vacuums-lightweight', image: 'cordless-vacuum.jpg', title: '十大最佳無線吸塵器(輕量型)2026年推薦', category: '智能家居', emoji: '🧹', 分鐘閱讀Time: '7 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-skincare-fridges-mini', image: 'skincare-fridge.jpg', title: '十大最佳迷你護膚冰箱2026年推薦', category: '美容護理', emoji: '❄️', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-insulated-water-bottles', image: 'water-bottle.jpg', title: '十大最佳保溫水壺2026年推薦', category: '戶外與旅行', emoji: '🧊', 分鐘閱讀Time: '5 分鐘閱讀', badge: '我們的推薦' },
-  { slug: 'top-10-best-massage-guns-recovery', image: 'massage-gun.jpg', title: '十大最佳按摩槍肌肉恢復2026年推薦', category: '健身與健康', emoji: '💆', 分鐘閱讀Time: '6 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-coffee-makers-single-serve', image: 'coffee.jpg', title: '十大最佳單杯咖啡機2026年推薦', category: '居家與廚房', emoji: '☕', 分鐘閱讀Time: '6 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-area-rugs-living-room', image: 'rug.jpg', title: '十大最佳客廳地毯2026年推薦', category: '家居裝飾', emoji: '🏠', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-running-shoes-2026', image: 'fitness.jpg', title: '十大最佳慢跑鞋2026年推薦', category: '運動用品', emoji: '🏃', 分鐘閱讀Time: '6 分鐘閱讀', badge: '編輯精選' },
-  { slug: 'top-10-best-basketball-shoes-2026', image: 'fitness.jpg', title: '十大最佳籃球鞋2026年推薦', category: '運動用品', emoji: '🏀', 分鐘閱讀Time: '6 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-face-serums-2026', image: 'beauty.jpg', title: '十大最佳面部精華液2026年推薦', category: '美容化妝品', emoji: '✨', 分鐘閱讀Time: '7 分鐘閱讀', badge: '編輯精選' },
-  { slug: 'top-10-best-sunscreen-products-2026', image: 'beauty.jpg', title: '十大最佳防曬產品2026年推薦', category: '美容化妝品', emoji: '☀️', 分鐘閱讀Time: '6 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-casual-sneakers-2026', image: 'outdoor.jpg', title: '十大最佳休閒運動鞋2026年推薦', category: '服裝鞋帽', emoji: '👟', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-rain-jackets-outdoor-2026', image: 'outdoor.jpg', title: '十大最佳防風防水外套2026年推薦', category: '服裝鞋帽', emoji: '🧥', 分鐘閱讀Time: '6 分鐘閱讀', badge: '最佳性價比' },
-  { slug: 'top-10-best-leather-wallets-2026', image: 'beauty.jpg', title: '十大最佳皮質錢包2026年推薦', category: '衣服飾物', emoji: '👛', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-  { slug: 'top-10-best-silk-scarves-accessories-2026', image: 'beauty.jpg', title: '十大最佳絲綢圍巾配飾2026年推薦', category: '衣服飾物', emoji: '🧣', 分鐘閱讀Time: '5 分鐘閱讀', badge: null },
-];
+const postFiles = import.meta.glob("../../data/posts/*.json", { eager: true });
+const reviews = Object.entries(postFiles).map(([p, mod]) => {
+  const d = mod.default;
+  return { slug: p.split("/").pop().replace(".json", ""), title: d.title, titleZh: d.title_zh || d.title, category: d.category, date: d.date, readTime: d.readTime };
+}).sort((a, b) => b.date.localeCompare(a.date));
 
 const description = "專業評測與排名，涵蓋廚房用品到健身裝備，為講究品味的您推薦最佳選擇。";
 ---
 
 <BaseLayout title="10Best Living — 精選產品評測與排名" description={description} path="/blog">
   <div class="bg-card">
-    <!-- Hero -->
     <div class="py-20 lg:py-28 bg-gradient-to-br from-cream via-cream-dark to-cream text-center">
       <div class="max-w-4xl mx-auto px-6 lg:px-8" data-aos="fade-up">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold/30 bg-gold/5 mb-6">
           <span class="w-2 h-2 rounded-full bg-gold"></span>
-          <span class="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold">專家評論</span>
+          <span class="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold" data-i18n="expert_reviews">專家評論</span>
         </div>
         <h1 class="font-serif text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-          最<span class="gold-gradient-text">值得信赖</span>的產品評測
+          最<span class="gold-gradient-text" data-i18n="trusted">值得信賴</span><span data-i18n="reviews_title">的產品評測</span>
         </h1>
-        <p class="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed">
-          每篇評測均由獨立研究與測試完成。我們只推薦真正相信的產品——因為您的信任比任何佣金更重要。
-        </p>
+        <p class="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed" data-i18n="hero_subtitle">每篇評測均由獨立研究與測試完成。我們只推薦真正相信的產品——因為您的信任比任何佣金更重要。</p>
       </div>
     </div>
-
-    <!-- Review Grid -->
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {reviews.map((review, i) => (
-          <a
-            href={`/blog/${review.slug}`}
-            class="bg-cream rounded-2xl overflow-hidden hover:shadow-elevated transition-all duration-300 group flex flex-col"
-            data-aos="fade-up"
-            data-aos-delay={i * 50}
-          >
+          <a href={`/blog/${review.slug}`} class="bg-cream rounded-2xl overflow-hidden hover:shadow-elevated transition-all duration-300 group flex flex-col" data-aos="fade-up" data-aos-delay={i * 50}>
             <div class="relative aspect-[16/10] overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-stone-100 group-hover:scale-105 transition-transform duration-500"></div>
               <div class="absolute inset-0">
-              <img src={`/images/${review.image}`} alt={`${review.title}`} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src="/images/default-review.jpg" alt={review.titleZh} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
-              {review.badge && (
-                <div class="absolute top-4 left-4">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-gold text-dark text-xs font-bold shadow-lg">
-                    {review.badge}
-                  </span>
-                </div>
-              )}
               <div class="absolute top-4 right-4">
-                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary">
-                  {review.category}
-                </span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary" data-lang-content="zh-TW">{review.category}</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary hidden" data-lang-content="en">{review.category}</span>
               </div>
             </div>
             <div class="p-6 flex flex-col flex-1">
-              <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1">
-                {review.title}
-              </h2>
+              <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1" data-lang-content="zh-TW">{review.titleZh}</h2>
+              <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1 hidden" data-lang-content="en">{review.title}</h2>
               <div class="flex items-center justify-between pt-4 border-t border-border">
-                <span class="text-xs text-text-silent">{review.分鐘閱讀Time} 分鐘閱讀</span>
-                <span class="inline-flex items-center gap-1 text-sm font-medium text-gold group/link">
-                  瀏覽評測
+                <span class="text-xs text-text-silent" data-lang-content="zh-TW">{review.readTime} 閱讀</span>
+                <span class="text-xs text-text-silent hidden" data-lang-content="en">{review.readTime} read</span>
+                <span class="inline-flex items-center gap-1 text-sm font-medium text-gold group/link" data-i18n="browse_review">瀏覽評測
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </span>
               </div>
@@ -94,4 +55,3 @@ const description = "專業評測與排名，涵蓋廚房用品到健身裝備�
     </div>
   </div>
 </BaseLayout>
-
