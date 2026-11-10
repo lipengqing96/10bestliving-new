@@ -156,17 +156,6 @@ if (!post) Astro.redirect("/404");
     if(closeMenu) closeMenu.onclick=()=>{mobileMenu.classList.add("hidden");mobileMenu.classList.remove("flex");};
   </script>
   
-  <article class="pt-28 pb-20 relative">
-    <div class="max-w-3xl mx-auto px-6">
-      <img src="{post.featuredImg}" alt="{post.title}" class="w-full h-64 md:h-80 object-cover rounded-2xl mb-8 shadow-card" loading="eager"/>
-      <div class="flex items-center gap-3 mb-6">
-        <span class="px-3 py-1 rounded-full text-sm font-medium bg-gold/20 text-gold">{post.category}</span>
-        <span class="text-gray-600">{post.readTime} &middot; {post.date}</span>
-      </div>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold text-dark mb-6 leading-tight">{post.title}</h1>
-      <div class="w-16 h-1 bg-gradient-to-r from-gold to-gold-light rounded-full mb-8"></div>
-      <div class="prose prose-lg max-w-none text-text-muted leading-relaxed whitespace-pre-line">{post.content}</div>
-    </div>
-  </article>
+  NEW_ARTICLE_HERE
 </body>
 </html>
