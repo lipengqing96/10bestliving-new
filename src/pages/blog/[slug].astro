@@ -44,6 +44,7 @@ const categoryEn = catEN[post.category] || post.category;
 const titleZh = post.title_zh || post.title;
 const contentZh = post.content_zh || post.content;
 const description = post.description_zh || '專業評測與推薦';
+const norm = s => s.replace(/\\n/g, String.fromCharCode(10));
 ---
 
 <BaseLayout title={titleZh + ' | 10Best Living'} description={description} path={Astro.url.pathname}>
@@ -65,13 +66,13 @@ const description = post.description_zh || '專業評測與推薦';
       </div>
       
       <h1 class="font-serif text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight" data-lang-content="zh-TW">{titleZh}</h1>
-      <h1 class="font-serif text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight hidden" data-lang-content="en">{post.title}</h1>
+      <h1 class="font-serif text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight" data-lang-content="en">{post.title}</h1>
       
       <!-- Chinese content -->
       <div class="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-primary prose-p:text-dark prose-p:leading-relaxed prose-li:ml-4" data-lang-content="zh-TW">
         {(() => {
           const NL = String.fromCharCode(10);
-          const lines = contentZh.split(NL);
+          const lines = norm(contentZh).split(NL);
           return lines.map((line, i) => {
             if (line.startsWith('# ')) return <h1 key={i} class="font-serif text-2xl lg:text-3xl font-bold text-primary my-8">{line.slice(2)}</h1>;
             if (line.startsWith('## ')) return <h2 key={i} class="font-serif text-xl lg:text-2xl font-semibold text-primary my-6">{line.slice(3)}</h2>;
@@ -89,10 +90,10 @@ const description = post.description_zh || '專業評測與推薦';
       </div>
       
       <!-- English content -->
-      <div class="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-primary prose-p:text-dark prose-p:leading-relaxed prose-li:ml-4" data-lang-content="en" style="display:none">
+      <div class="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-primary prose-p:text-dark prose-p:leading-relaxed prose-li:ml-4 hidden" data-lang-content="en">
         {(() => {
           const NL = String.fromCharCode(10);
-          const lines = post.content.split(NL);
+          const lines = norm(post.content).split(NL);
           return lines.map((line, i) => {
             if (line.startsWith('# ')) return <h1 key={i} class="font-serif text-2xl lg:text-3xl font-bold text-primary my-8">{line.slice(2)}</h1>;
             if (line.startsWith('## ')) return <h2 key={i} class="font-serif text-xl lg:text-2xl font-semibold text-primary my-6">{line.slice(3)}</h2>;

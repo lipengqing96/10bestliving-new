@@ -2,9 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const postFiles = import.meta.glob("../../data/posts/*.json", { eager: true });
+const catZH = { Kitchen:"居家與廚房", "Home & Kitchen":"居家與廚房", Fitness:"健身與健康", Health:"健身與健康", "Fitness & Health":"健身與健康", "Smart Home":"智能家居", Beauty:"美容護理", "Beauty Care":"美容護理", Travel:"戶外與旅行", "Outdoor & Travel":"戶外與旅行", Sports:"運動用品", "Sports Equipment":"運動用品", Cosmetics:"美容化妝品", "Beauty & Cosmetics":"美容化妝品", Fashion:"織服鞋帽", "Fashion & Footwear":"織服鞋帽", Clothing:"服裝鞋帽", Accessories:"衣服飾物", "Clothing & Accessories":"衣服飾物", Bedroom:"臥室", "Living Room":"客廳", Home:"居家", Office:"辦公" };
+const catEN = { Kitchen:"Home & Kitchen", "Home & Kitchen":"Home & Kitchen", Fitness:"Fitness & Health", Health:"Fitness & Health", "Fitness & Health":"Fitness & Health", "Smart Home":"Smart Home", Beauty:"Beauty Care", "Beauty Care":"Beauty Care", Travel:"Outdoor & Travel", "Outdoor & Travel":"Outdoor & Travel", Sports:"Sports Equipment", "Sports Equipment":"Sports Equipment", Cosmetics:"Beauty & Cosmetics", "Beauty & Cosmetics":"Beauty & Cosmetics", Fashion:"Fashion & Footwear", "Fashion & Footwear":"Fashion & Footwear", Clothing:"Fashion & Footwear", Accessories:"Clothing & Accessories", "Clothing & Accessories":"Clothing & Accessories", Bedroom:"Bedroom", "Living Room":"Living Room", Home:"Home", Office:"Office" };
 const reviews = Object.entries(postFiles).map(([p, mod]) => {
   const d = mod.default;
-  return { slug: p.split("/").pop().replace(".json", ""), title: d.title, titleZh: d.title_zh || d.title, category: d.category, date: d.date, readTime: d.readTime };
+  const rawCat = d.category;
+  return { slug: p.split("/").pop().replace(".json", ""), title: d.title, titleZh: d.title_zh || d.title, categoryZh: catZH[rawCat] || rawCat, categoryEn: catEN[rawCat] || rawCat, date: d.date, readTime: d.readTime, featuredImg: d.featuredImg };
 }).sort((a, b) => b.date.localeCompare(a.date));
 
 const description = "專業評測與排名，涵蓋廚房用品到健身裝備，為講究品味的您推薦最佳選擇。";
@@ -19,38 +22,50 @@ const description = "專業評測與排名，涵蓋廚房用品到健身裝備�
           <span class="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold" data-i18n="expert_reviews">專家評論</span>
         </div>
         <h1 class="font-serif text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-          最<span class="gold-gradient-text" data-i18n="trusted">值得信賴</span><span data-i18n="reviews_title">的產品評測</span>
+          <span class="gold-gradient-text" data-i18n="trusted">值得信賴</span><span data-i18n="reviews_title">的產品評測</span>
         </h1>
         <p class="text-lg text-text-muted max-w-2xl mx-auto leading-relaxed" data-i18n="hero_subtitle">每篇評測均由獨立研究與測試完成。我們只推薦真正相信的產品——因為您的信任比任何佣金更重要。</p>
       </div>
     </div>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {reviews.map((review, i) => (
-          <a href={`/blog/${review.slug}`} class="bg-cream rounded-2xl overflow-hidden hover:shadow-elevated transition-all duration-300 group flex flex-col" data-aos="fade-up" data-aos-delay={i * 50}>
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-stone-100 group-hover:scale-105 transition-transform duration-500"></div>
-              <div class="absolute inset-0">
-                <img src="/images/default-review.jpg" alt={review.titleZh} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        {reviews.map((review, i) => {
+          const raw = review.featuredImg;
+          const imgUrl = raw?.startsWith("http") ? raw : (raw?.startsWith("/images/") ? raw : `/images/${raw}`);
+          return (
+            <a href={`/blog/${review.slug}`} class="bg-cream rounded-2xl overflow-hidden hover:shadow-elevated transition-all duration-300 group flex flex-col" data-aos="fade-up" data-aos-delay={i * 50}>
+              <div class="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                {review.featuredImg ? (
+                  <img
+                    src={imgUrl}
+                    alt={review.titleZh}
+                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="absolute inset-0 bg-gradient-to-br from-amber-50 to-stone-100 group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+                    <span class="text-5xl opacity-30">📷</span>
+                  </div>
+                )}
+                <div class="absolute top-4 right-4">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary" data-lang-content="zh-TW">{review.categoryZh}</span>
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary" data-lang-content="en">{review.categoryEn}</span>
+                </div>
               </div>
-              <div class="absolute top-4 right-4">
-                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary" data-lang-content="zh-TW">{review.category}</span>
-                <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-medium text-primary hidden" data-lang-content="en">{review.category}</span>
+              <div class="p-6 flex flex-col flex-1">
+                <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1" data-lang-content="zh-TW">{review.titleZh}</h2>
+                <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1" data-lang-content="en">{review.title}</h2>
+                <div class="flex items-center justify-between pt-4 border-t border-border">
+                  <span class="text-xs text-text-silent" data-lang-content="zh-TW">{review.readTime} 閱讀</span>
+                  <span class="text-xs text-text-silent" data-lang-content="en">{review.readTime} read</span>
+                  <span class="inline-flex items-center gap-1 text-sm font-medium text-gold group/link" data-i18n="browse_review">瀏覽評測
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </span>
+                </div>
               </div>
-            </div>
-            <div class="p-6 flex flex-col flex-1">
-              <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1" data-lang-content="zh-TW">{review.titleZh}</h2>
-              <h2 class="font-serif text-xl font-bold text-primary mb-3 group-hover:text-gold transition-colors line-clamp-2 flex-1 hidden" data-lang-content="en">{review.title}</h2>
-              <div class="flex items-center justify-between pt-4 border-t border-border">
-                <span class="text-xs text-text-silent" data-lang-content="zh-TW">{review.readTime} 閱讀</span>
-                <span class="text-xs text-text-silent hidden" data-lang-content="en">{review.readTime} read</span>
-                <span class="inline-flex items-center gap-1 text-sm font-medium text-gold group/link" data-i18n="browse_review">瀏覽評測
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </span>
-              </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          );
+        })}
       </div>
     </div>
   </div>

@@ -3,22 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductImage from '../components/ProductImage.astro';
 import CTA from '../components/CTA.astro';
 
-const categories = [
-  { slug: '#home-kitchen', name: '居家與廚房', i18nKey: 'cat_home_kitchen', emoji: '🍳', gradient: 'from-amber-50 via-orange-50 to-stone-100', count: 4, accent: '#C9A962' },
-  { slug: '#fitness-health', name: '健身與健康', i18nKey: 'cat_fitness_health', emoji: '💪', gradient: 'from-emerald-50 via-teal-50 to-cyan-50', count: 4, accent: '#2D5A4C' },
-  { slug: '#smart-home', name: '智能家居', i18nKey: 'cat_smart_home', emoji: '🏡', gradient: 'from-blue-50 via-indigo-50 to-violet-50', count: 3, accent: '#4F46E5' },
-  { slug: '#beauty', name: '美容護理', i18nKey: 'cat_beauty', emoji: '✨', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#BE185D' },
-  { slug: '#outdoor', name: '戶外與旅行', i18nKey: 'cat_outdoor', emoji: '🏔️', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
-  { slug: '#sports', name: '\u904b\u52d5\u7528\u54c1', i18nKey: 'cat_sports', emoji: '\ud83c\udfc5', gradient: 'from-emerald-50 via-green-50 to-teal-50', count: 2, accent: '#059669' },
-  { slug: '#beauty-cosmetics', name: '\u7f8e\u5bb9\u5316\u88dd\u54c1', i18nKey: 'cat_cosmetics', emoji: '\ud83d\udc84', gradient: 'from-rose-50 via-pink-50 to-fuchsia-50', count: 2, accent: '#DB2777' },
-  { slug: '#fashion-shoes', name: '\u7e54\u670d\u978b\u5e3d', i18nKey: 'cat_fashion_shoes', emoji: '\ud83d\udc5f', gradient: 'from-violet-50 via-purple-50 to-indigo-50', count: 2, accent: '#7C3AED' },
-  { slug: '#accessories', name: '\u8863\u670d\u98fe\u7269', i18nKey: 'cat_accessories', emoji: '\ud83d\udc8d', gradient: 'from-amber-50 via-yellow-50 to-orange-50', count: 2, accent: '#B45309' },
-];
 
 const featuredReviews = [
   {
     slug: 'top-10-best-portable-blenders-smoothies-2026',
-    title: '十大最佳便攜果汁機鮮果昔攪拌機2026年推薦',
     excerpt: '從通勤到健身房，便攜果汁機隨時為你打造新鮮冰沙。',
     category: '居家與廚房',
     emoji: '🥤',
@@ -29,7 +17,6 @@ const featuredReviews = [
   },
   {
     slug: 'top-10-best-robot-vacuums-under-300',
-    title: '十大最佳300美元以內掃地機器人2026年推薦',
     excerpt: '智慧清潔不花大錢，我們測試了最具性價比的掃地機器人榜單。',
     category: '智能家居',
     emoji: '🤖',
@@ -40,7 +27,6 @@ const featuredReviews = [
   },
   {
     slug: 'top-10-best-yoga-mats-beginners',
-    title: '十大最佳瑜伽墊初學者入門2026年推薦',
     excerpt: '找到適合每個練習階段的完美瑜伽墊，我們測試了25款產品的抓地力、緩衝和耐用性。',
     category: '健身與健康',
     emoji: '🧘',
@@ -138,9 +124,6 @@ const allReviews = [
               <span data-i18n="hero_btn_browse">瀏覽評測</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="/categories" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium border-2 border-[#C9A962] text-[#C9A962] hover:bg-[#C9A962] hover:text-[#1A1A1A] transition-all duration-300">
-              <span data-i18n="hero_btn_categories">瀏覽分類</span>
-            </a>
           </div>
 
           {/* Trust Badges */}
@@ -169,8 +152,6 @@ const allReviews = [
                 <div class="flex items-center gap-1 mb-1">
                   {[1,2,3,4,5].map(() => <svg key={1} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#C9A962" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
                 </div>
-                <p class="text-sm font-bold text-[#1A1A1A]">最佳便攜果汁機</p>
-                <p class="text-xs text-[#6B6B6B]">2026專家指南</p>
               </div>
             </div>
             <div class="col-span-1 mt-10" data-aos="fade-up" data-aos-delay="400">
@@ -179,8 +160,6 @@ const allReviews = [
                 <div class="flex items-center gap-1 mb-1">
                   {[1,2,3,4,5].map(() => <svg key={1} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#C9A962" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
                 </div>
-                <p class="text-sm font-bold text-[#1A1A1A]">最佳掃地機器人</p>
-                <p class="text-xs text-[#6B6B6B]">300美元以內</p>
               </div>
             </div>
             <div class="col-span-1" data-aos="fade-up" data-aos-delay="500">
@@ -189,8 +168,6 @@ const allReviews = [
                 <div class="flex items-center gap-1 mb-1">
                   {[1,2,3,4,5].map(() => <svg key={1} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#C9A962" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
                 </div>
-                <p class="text-sm font-bold text-[#1A1A1A]">最佳咖啡機</p>
-                <p class="text-xs text-[#6B6B6B]">單杯選擇指南</p>
               </div>
             </div>
             <div class="col-span-1 mt-10" data-aos="fade-up" data-aos-delay="600">
@@ -199,8 +176,6 @@ const allReviews = [
                 <div class="flex items-center gap-1 mb-1">
                   {[1,2,3,4,5].map(() => <svg key={1} xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#C9A962" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
                 </div>
-                <p class="text-sm font-bold text-[#1A1A1A]">最佳瑜伽墊</p>
-                <p class="text-xs text-[#6B6B6B]">初學者到專業</p>
               </div>
             </div>
           </div>
@@ -215,46 +190,12 @@ const allReviews = [
     </div>
   </section>
 
-  {/* Categories Section */}
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-16" data-aos="fade-up">
-        <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#C9A962] mb-3">探索</p>
-        <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A] mb-4">依分類瀏覽</h2>
-        <div class="w-20 h-0.5 bg-gradient-to-r from-[#C9A962] to-[#E8D5B0] mx-auto"></div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {categories.map((cat, i) => (
-          <a
-            href={`/blog${cat.slug}`}
-            class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer"
-            data-aos="fade-up"
-            data-aos-delay={i * 80}
-          >
-            <div class={`absolute inset-0 bg-gradient-to-br ${cat.gradient} group-hover:scale-105 transition-transform duration-500`}></div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center p-8">
-              <span class="text-7xl mb-5 group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">{cat.emoji}</span>
-              <h3 class="font-serif text-2xl font-bold text-[#1A1A1A] text-center mb-3">{cat.name}</h3>
-              <div class="flex items-center gap-2 px-4 py-1.5 rounded-full" style={`background: ${cat.accent}15`}>
-                <span class="text-xs font-semibold" style={`color: ${cat.accent}`}>{cat.count} Review{cat.count > 1 ? 's' : ''}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={cat.accent} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-              </div>
-            </div>
-            <div class="absolute inset-0 border-2 border-transparent group-hover:border-[#C9A962]/40 rounded-2xl transition-colors duration-300"></div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
 
   {/* 精選評測區段 */}
   <section class="py-24" style="background: linear-gradient(180deg, #F7F4EF 0%, #FFFFFF 100%);">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-end justify-between mb-12" data-aos="fade-up">
-        <div>
-          <p class="text-xs font-sans font-medium tracking-[0.25em] uppercase text-[#C9A962] mb-3" data-i18n="featured_title">精選推薦</p>
-          <h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A]" data-i18n="featured_title">編輯精選</h2>
+        <div><h2 class="font-serif text-4xl lg:text-5xl font-bold text-[#1A1A1A]" data-i18n="featured_title">編輯精選</h2>
         </div>
         <a href="/blog" class="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-[#C9A962] hover:text-[#B8944F] transition-colors" data-i18n="browse_all">
           查看全部評測
@@ -271,14 +212,6 @@ const allReviews = [
             data-aos-delay={i * 100}
           >
             <ProductImage category={review.category} emoji={review.emoji} gradient={review.gradient} image={review.image} size="lg" />
-              {review.badge && (
-                <div class="absolute top-4 left-4">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md" style="background: linear-gradient(135deg, #C9A962, #E8D5B0); color: #1A1A1A;">
-                    {review.badge}
-                  </span>
-                </div>
-              )}
-<div class="p-6">
               <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight" data-i18n-feat={i} data-i18n-type="title">
                 <span class="feat-title" data-i18n-feat={i} data-i18n-type="title">{review.title}</span>
               </h3>
@@ -307,27 +240,9 @@ const allReviews = [
             data-aos-delay={(i + 3) * 100}
           >
             <ProductImage category={review.category} emoji={review.emoji} gradient={review.gradient} image={review.image} size="lg" />
-              {review.badge && (
-                <div class="absolute top-4 left-4">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md" style="background: linear-gradient(135deg, #C9A962, #E8D5B0); color: #1A1A1A;">
-                    {review.badge}
-                  </span>
-                </div>
-              )}
 <div class="p-6">
-              <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight" data-i18n-feat={i} data-i18n-type="title">
-                <span class="feat-title" data-i18n-feat={i} data-i18n-type="title">{review.title}</span>
-              </h3>
-              <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4">
-                <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4" data-i18n-feat={i} data-i18n-type="excerpt">{review.excerpt}</p>
-              </p>
-              <div class="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
-                <span class="text-xs text-[#9A9A9A]" data-i18n-feat={i} data-i18n-type="readtime">{review.readTime}</span>
-                <span class="inline-flex items-center gap-1 text-sm font-semibold text-[#C9A962] group/link" data-i18n="browse_review">
                   <span data-i18n="browse_review">瀏覽評測</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </span>
-              </div>
             </div>
           </a>
         ))}
