@@ -252,8 +252,7 @@
 
     });
 
-    window.__setLang = setLang;
-    window.__getLang = getLang;
+       window.__getLang = getLang;
 
     document.querySelectorAll("[data-lang-content]").forEach(function(el) {
       el.style.display = el.dataset.langContent === lang ? "" : "none";
