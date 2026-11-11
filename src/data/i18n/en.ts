@@ -30,7 +30,7 @@ export const i18n = {
   "back_to_top": "Back to top",
   "share": "Share this review:",
   "read_time_suffix": " min read",
-  "by_team": "By 10Best Living Team",
+  "by_team": "By PickProDeals Team",
   "cookie_text": "We use cookies to enhance your experience and analyze site traffic. By continuing to browse, you agree to our",
   "cookie_policy_link": "Privacy Policy",
   "cookie_btn": "Accept",
@@ -39,7 +39,7 @@ export const i18n = {
   "expert_reviews": "Expert Reviews",
   "categories_page_title": "Product Categories",
   "categories_page_desc": "Browse all review articles by category",
-  "about_page_title": "About 10Best Living",
+  "about_page_title": "About PickProDeals",
   "about_page_desc": "We're an independent product review publication dedicated to providing the most reliable buying advice for discerning consumers.",
   "contact_page_title": "Contact Us",
   "contact_page_desc": "Have questions or partnership inquiries? Reach out anytime.",
@@ -72,5 +72,5 @@ export const i18n = {
   "footer_terms": "Terms of Service",
   "footer_affiliate": "Affiliate Disclosure",
   "affiliate_note": "As an Amazon Associate we earn from qualifying purchases. All recommendations are independent and fair.",
-  "footer_copyright": "© 2026 10Best Living. All rights reserved."
+  "footer_copyright": "© 2026 PickProDeals. All rights reserved."
 };

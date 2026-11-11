@@ -1,4 +1,4 @@
-# 10Best Living
+# PickProDeals
 
 A premium affiliate marketing website featuring curated top-10 product reviews for luxury lifestyle categories.
 

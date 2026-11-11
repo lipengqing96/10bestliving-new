@@ -21,7 +21,7 @@ export const i18n = {
   "back_to_top": "回到頂部",
   "share": "分享此評測：",
   "read_time_suffix": "分鐘閱讀",
-  "by_team": "由10Best Living團隊評測",
+  "by_team": "由PickProDeals團隊評測",
   "cookie_text": "我們使用Cookie以提升體驗並分析網站流量。繼續瀏覽即表示您同意我們的",
   "cookie_policy_link": "隱私權政策",
   "cookie_btn": "接受",
@@ -30,7 +30,7 @@ export const i18n = {
   "expert_reviews": "專家評論",
   "categories_page_title": "產品分類",
   "categories_page_desc": "按類別浏览所有評測文章",
-  "about_page_title": "關於10Best Living",
+  "about_page_title": "關於PickProDeals",
   "about_page_desc": "我們是獨立的產品評測媒體，致力於為講究品味的消費者提供最可靠的購買建議。",
   "contact_page_title": "聯絡我們",
   "contact_page_desc": "有任何問題或合作意向？歡迎隨時聯繫我們。",
@@ -71,5 +71,5 @@ export const i18n = {
   "browse_all": "查看全部評測",
   "browse_review": "瀏覽評測",
   "newsletter_tagline": "電子報",
-  "footer_copyright": "© 2026 10Best Living. 版權所有。"
+  "footer_copyright": "© 2026 PickProDeals. 版權所有。"
 };
