@@ -230,23 +230,6 @@ const allReviews = [
         ))}
       </div>
 
-      {/* 底部第三排 - 更多精選 */}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-        {featuredReviews.slice(3).map((review, i) => (
-          <a
-            href={`/blog/${review.slug}`}
-            class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-all duration-300 group"
-            data-aos="fade-up"
-            data-aos-delay={(i + 3) * 100}
-          >
-            <ProductImage category={review.category} emoji={review.emoji} gradient={review.gradient} image={review.image} size="lg" />
-<div class="p-6">
-                  <span data-i18n="browse_review">瀏覽評測</span>
-                </span>
-            </div>
-          </a>
-        ))}
-      </div>
 
       <div class="mt-12 text-center sm:hidden">
         <a href="/blog" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold border-2 border-[#C9A962] text-[#C9A962] hover:bg-[#C9A962] hover:text-[#1A1A1A] transition-all duration-300">
