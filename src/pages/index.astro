@@ -7,66 +7,98 @@ import CTA from '../components/CTA.astro';
 const featuredReviews = [
   {
     slug: 'top-10-best-portable-blenders-smoothies-2026',
+    title: '十大最佳便攜果汁機2026年推薦',
+    titleEn: 'Top 10 Best Portable Blenders for Smoothies 2026',
     excerpt: '從通勤到健身房，便攜果汁機隨時為你打造新鮮冰沙。',
+    excerptEn: 'From commute to gym, portable blenders make fresh smoothies anywhere.',
     category: '居家與廚房',
+    categoryEn: 'Home & Kitchen',
     emoji: '🥤',
     gradient: 'from-amber-50 via-orange-50 to-yellow-50',
     badge: '編輯精選',
+    badgeEn: 'Editor Pick',
     image: 'blender.jpg',
     readTime: '5 分鐘閱讀',
+    readTimeEn: '5 min read',
   },
   {
     slug: 'top-10-best-robot-vacuums-under-300',
+    title: '十大最佳300美元以內掃地機器人2026年推薦',
+    titleEn: 'Top 10 Best Robot Vacuums Under $300 in 2026',
     excerpt: '智慧清潔不花大錢，我們測試了最具性價比的掃地機器人榜單。',
+    excerptEn: 'Smart cleaning on a budget - we tested the best value robot vacuums.',
     category: '智能家居',
+    categoryEn: 'Smart Home',
     emoji: '🤖',
     gradient: 'from-blue-50 via-indigo-50 to-violet-50',
     badge: null,
+    badgeEn: null,
     image: 'robot-vacuum.jpg',
     readTime: '7 分鐘閱讀',
+    readTimeEn: '7 min read',
   },
   {
     slug: 'top-10-best-yoga-mats-beginners',
+    title: '十大最佳瑜伽墊初學者入門2026年推薦',
+    titleEn: 'Top 10 Best Yoga Mats for Beginners in 2026',
     excerpt: '找到適合每個練習階段的完美瑜伽墊，我們測試了25款產品的抓地力、緩衝和耐用性。',
+    excerptEn: 'Find the perfect yoga mat for every level. We tested grip, cushioning, and durability across 25 products.',
     category: '健身與健康',
+    categoryEn: 'Fitness & Health',
     emoji: '🧘',
     gradient: 'from-emerald-50 via-teal-50 to-green-50',
     badge: '最佳性價比',
+    badgeEn: 'Best Value',
     image: 'yoga-mat.jpg',
     readTime: '5 分鐘閱讀',
+    readTimeEn: '5 min read',
   },
   {
     slug: 'top-10-best-coffee-makers-single-serve',
     title: '十大最佳單杯咖啡機2026年推薦',
+    titleEn: 'Top 10 Best Single-Serve Coffee Makers in 2026',
     excerpt: '用最佳膠囊和研磨咖啡機提升您的早晨儀式，價格從40至300美元。',
+    excerptEn: 'Elevate your morning routine with the best pod and ground coffee makers, from $40 to $300.',
     category: '居家與廚房',
+    categoryEn: 'Home & Kitchen',
     emoji: '☕',
     gradient: 'from-amber-50 via-yellow-50 to-orange-50',
     badge: null,
+    badgeEn: null,
     image: 'coffee.jpg',
     readTime: '6 分鐘閱讀',
+    readTimeEn: '6 min read',
   },
   {
     slug: 'top-10-best-insulated-water-bottles',
     title: '十大最佳保溫水壺2026年推薦',
+    titleEn: 'Top 10 Best Insulated Water Bottles in 2026',
     excerpt: '全天保持水分補給，我們測試了18款水壺的保冷能力、耐用性和防漏性能。',
+    excerptEn: 'Stay hydrated all day. We tested 18 bottles for cold retention, durability, and leak-proof performance.',
     category: '戶外與旅行',
+    categoryEn: 'Outdoor & Travel',
     emoji: '🧊',
     gradient: 'from-cyan-50 via-blue-50 to-indigo-50',
     badge: '我們的推薦',
+    badgeEn: 'Our Pick',
     image: 'water-bottle.jpg',
     readTime: '5 分鐘閱讀',
+    readTimeEn: '5 min read',
   },
   {
     slug: 'top-10-best-weighted-blankets-better-sleep',
     title: '十大最佳重力毯改善睡眠2026年推薦',
+    titleEn: 'Top 10 Best Weighted Blankets for Better Sleep in 2026',
     excerpt: '用深壓刺激療法提升睡眠品質，經測試重量分佈和溫度調節表現。',
+    excerptEn: 'Improve sleep quality with deep pressure stimulation. Tested for weight distribution and temperature regulation.',
     category: '臥室',
+    categoryEn: 'Bedroom',
     emoji: '🛏️',
     gradient: 'from-violet-50 via-purple-50 to-fuchsia-50',
     badge: null,
     image: 'weighted-blanket.jpg',
     readTime: '5 分鐘閱讀',
+    readTimeEn: '5 min read',
   },
 ];
 
@@ -212,14 +244,15 @@ const allReviews = [
             data-aos-delay={i * 100}
           >
             <ProductImage category={review.category} emoji={review.emoji} gradient={review.gradient} image={review.image} size="lg" />
-              <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight" data-i18n-feat={i} data-i18n-type="title">
-                <span class="feat-title" data-i18n-feat={i} data-i18n-type="title">{review.title}</span>
-              </h3>
-              <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4">
-                <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4" data-i18n-feat={i} data-i18n-type="excerpt">{review.excerpt}</p>
-              </p>
+                <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight" data-lang-content="zh-TW">{review.title}</h3>
+                <h3 class="font-serif text-xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#C9A962] transition-colors line-clamp-2 leading-tight hidden" data-lang-content="en">{review.titleEn}</h3>
+                <div class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4">
+                <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4" data-lang-content="zh-TW">{review.excerpt}</p>
+                <p class="text-sm text-[#6B6B6B] leading-relaxed line-clamp-2 mb-4 hidden" data-lang-content="en">{review.excerptEn}</p>
+              </div>
               <div class="flex items-center justify-between pt-4 border-t border-[#E8E4DD]">
-                <span class="text-xs text-[#9A9A9A]" data-i18n-feat={i} data-i18n-type="readtime">{review.readTime}</span>
+                <span class="text-xs text-[#9A9A9A]" data-lang-content="zh-TW">{review.readTime}</span>
+                <span class="text-xs text-[#9A9A9A] hidden" data-lang-content="en">{review.readTimeEn}</span>
                 <span class="inline-flex items-center gap-1 text-sm font-semibold text-[#C9A962] group/link" data-i18n="browse_review">
                   瀏覽評測
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
